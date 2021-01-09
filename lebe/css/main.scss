@@ -1045,14 +1045,46 @@ a {
       }
     }
 
+    @include mobile {
+      padding-bottom: 15px;
+      padding-top: 20px;
+      .container {
+        .row {
+          .footer-main-column {
+            &:not(:first-child) {
+              order: 1;
+            }
+
+            &:first-child {
+              order: 2;
+            }
+
+            &:last-child {
+              order: 13;
+            }
+
+            .footer-menu {
+              text-align: center;
+
+              .menu__title {
+                &:after {
+                  left: calc(50% - 25px);
+                }
+              }
+            }
+          }
+        }
+      }
+      #footer-logo {
+        border-right: 1px transparent solid;
+        border-left: 1px transparent solid;
+      }
+    }
+
 
   }
 
-  @include mobile {
-    padding-bottom: 15px;
-    padding-top: 20px;
-  }
- 
+
 }
 
 #footer-sub {
@@ -1096,8 +1128,17 @@ a {
     font-size: 0.813rem;
     line-height: 2.813rem;
   }
+
+  @include mobile {
+    .social-list {
+      text-align: center;
+    }
+    .payment-info {
+      text-align: center;
+    }
+  }
 }
 
 
-}
+
 

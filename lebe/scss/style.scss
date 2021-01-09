@@ -1,0 +1,53 @@
+$font-stack: 'Open Sans', sans-serif;
+$primary-color: #f33c3c;
+
+body {
+	font-family: $font-stack;
+}
+
+a {
+	&:hover, &:focus {
+		text-decoration: none;
+		color: $primary-color;
+	}
+}
+
+.header-menu {
+	ul {
+		li {
+			a {
+				font-size: 14px;
+				font-weight: 700;
+				letter-spacing: 1px;
+				color: #fff;
+
+				&:hover, &:focus {
+					color: $primary-color;
+				}
+			}
+		}
+	}
+}
+
+.product-item {
+	.p-info {
+		.p-title {
+			margin-bottom: 5px;
+
+			a {
+				color: #868686;
+				font-size: 16px;
+
+				&:hover, &:focus {
+					color: $primary-color;
+				}
+			}
+		}
+
+		.p-price {
+			color: #000;
+			font-size: 16px;
+			font-weight: 700;
+		}
+	}
+}

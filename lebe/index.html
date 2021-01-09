@@ -1,0 +1,772 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../lebe/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="../lebe/fonts/flaticon.css">
+    <link rel="stylesheet" href="../lebe/fonts/fontawesome/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
+          rel="stylesheet">
+    <!-- Library:Slick slider -->
+    <link rel="stylesheet" type="text/css" href="../lebe/libs/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="../lebe/libs/slick/slick-theme.css"/>
+    <!-- Library:Ion Range Slider -->
+    <link rel="stylesheet" href="../lebe/libs/ion-range-slider/css/ion.rangeSlider.min.css"/>
+    <link rel="stylesheet" href="../lebe/css/main.css">
+    <title>Shop Page</title>
+</head>
+
+<body>
+<header id="header">
+    <section id="header-flash-news">
+        <div class="container">
+            <span class="header-flash-news__title">Join our showroom and get 20 % off ! Coupon code : Hebe20</span>
+            <span class="header-flash-news__close"></span>
+        </div>
+
+    </section>
+    <div class="clearfix"></div>
+    <section id="header-main">
+        <div class="menu-bar">
+            <div class="container-fluid">
+                <div class="row ">
+                    <div class="col-lg-2">
+                        <div class="header-search-box">
+                            <form action="#" method="get" class="header-search-form">
+                                <input type="search" class="header-search__input" placeholder="Search..." value=""
+                                       name="header-search">
+                                <button type="submit" class="header-search__submit">
+                                    <span class="flaticon-magnifying-glass-browser"></span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-8">
+                        <nav class="header-menu">
+                            <!--                <nav class="header-menu py-3 ">-->
+                            <ul class="nav d-flex flex-wrap justify-content-center align-items-center mx-auto">
+                                <li class="nav-item px-4"><a href="#">HOME</a></li>
+                                <li class="nav-item px-4"><a href="#">SHOP</a></li>
+                                <li class="nav-item px-4"><a href="#">ELEMENTS</a></li>
+                                <li class="nav-item px-5"><a href="#"><img src="../lebe/img/logo.png"
+                                                                           class="img-fluid"></a></li>
+                                <li class="nav-item px-4"><a href="#">PAGES</a></li>
+                                <li class="nav-item px-4"><a href="#">BLOG</a></li>
+                                <li class="nav-item px-4"><a href="#">MEGAMENU</a></li>
+                            </ul>
+                        </nav>
+
+                    </div>
+
+                    <div class="col-lg-2">
+                        <div class="header-bar float-right">
+                            <div class="dropdown language float-left">
+                                <button class="btn btn-secondary " type="button" id="language__button"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <img src="../lebe/img/united-states.png" alt="">
+                                </button>
+
+                                <div class="dropdown-menu" aria-labelledby="language__button">
+                                    <a class="language-item" href="#">
+                                        <img src="../lebe/img/united-states.png" alt="">
+                                        <span> English</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <!--                        <div class="dropdown currency">-->
+                            <!--                            <button class="btn btn-secondary dropdown-toggle" type="button" id="currency__button"-->
+                            <!--                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+                            <!--                                USD-->
+                            <!--                            </button>-->
+                            <!--                            <div class="dropdown-menu" aria-labelledby="currency__button">-->
+                            <!--                                <a class="currency-item" href="#">-->
+                            <!--                                    <span> EUR</span>-->
+                            <!--                                </a>-->
+                            <!--                            </div>-->
+                            <!--                        </div>-->
+                            <div class="account float-left">
+                                <a href="javascript:;" class="">
+                                    <span class="flaticon-profile"></span>
+                                </a>
+                            </div>
+
+                            <div class="cart float-left">
+                                <a href="javascript:;" class="cart__link">
+                                    <span class="flaticon-bag"></span>
+                                    <span class="cart-number">10</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="banner-area">
+            <!--            <img src="./img/banner.png" class="img-fluid">-->
+            <div class="page">
+                <h1 class="heading__title text-center">Shop</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Shop</li>
+                    </ol>
+                </nav>
+            </div>
+
+        </div>
+    </section>
+</header>
+
+
+<main class="mt-4" id="main">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-3">
+                <section id="sidebar">
+                    <div class="widget widget-categories">
+                        <div class="widget-categories__header">
+                            <span class="widget-categories__icon"></span>
+                            <span class="widget-categories__title">CATEGORIES</span>
+                        </div>
+                        <div class="widget-categories-checkbox-list">
+                            <div class="categories-checkbox__item">
+                                <input type="checkbox" name="categories[]" value="uncategorized">
+                                <span class="category__name">Uncategorized</span>
+                            </div>
+                            <div class="categories-checkbox__item">
+                                <input type="checkbox" name="categories[]" value="accessories">
+                                <span class="category__name">Accessories</span>
+                            </div>
+                            <div class="categories-checkbox__item">
+                                <input type="checkbox" name="categories[]" value="bags">
+                                <span class="category__name">Bags</span>
+                            </div>
+                            <div class="categories-checkbox__item">
+                                <input type="checkbox" name="categories[]" value="grooming">
+                                <span class="category__name">Grooming</span>
+                            </div>
+                            <div class="categories-checkbox__item">
+                                <input type="checkbox" name="categories[]" value="kith-fall-2019">
+                                <span class="category__name">Kith Fall 2019</span>
+                            </div>
+                            <div class="categories-checkbox__item">
+                                <input type="checkbox" name="categories[]" value="life-style">
+                                <span class="category__name">Life style</span>
+                            </div>
+                            <div class="categories-checkbox__item">
+                                <input type="checkbox" name="categories[]" value="men">
+                                <span class="category__name">Men</span>
+                            </div>
+                            <div class="categories-checkbox__item">
+                                <input type="checkbox" name="categories[]" value="new-arrivals">
+                                <span class="category__name">New arrivals</span>
+                            </div>
+                            <div class="categories-checkbox__item">
+                                <input type="checkbox" name="categories[]" value="shirts">
+                                <span class="category__name">Shirts</span>
+                            </div>
+                            <div class="categories-checkbox__item">
+                                <input type="checkbox" name="categories[]" value="shoes">
+                                <span class="category__name">Shoes</span>
+                            </div>
+                            <div class="categories-checkbox__item">
+                                <input type="checkbox" name="categories[]" value="shoes">
+                                <span class="category__name">Shoes</span>
+                            </div>
+                            <div class="categories-checkbox__item">
+                                <input type="checkbox" name="categories[]" value="stationery">
+                                <span class="category__name">Stationery</span>
+                            </div>
+                            <div class="categories-checkbox__item">
+                                <input type="checkbox" name="categories[]" value="t-shirts">
+                                <span class="category__name">T-Shirts</span>
+                            </div>
+                            <div class="categories-checkbox__item">
+                                <input type="checkbox" name="categories[]" value="trousers">
+                                <span class="category__name">Trousers</span>
+                            </div>
+                            <div class="categories-checkbox__item">
+                                <input type="checkbox" name="categories[]" value="women">
+                                <span class="category__name">Women</span>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="widget widget-sizes">
+                        <div class="widget__header">
+                            <span class="widget-title">SIZE</span>
+                        </div>
+                        <div class="widget-sizes-checkbox__list">
+                            <div class="sizes-checkbox__item active">
+                                <input type="checkbox" name="sizes[]" value="none">
+                                <span class="size__round">
+                                    <span class="size__name none">
+                                            NONE
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="sizes-checkbox__item">
+                                <input type="checkbox" name="sizes[]" value="none">
+                                <span class="size__round">
+                                    <span class="size__name">
+                                            XS
+                                    </span>
+                                </span>
+
+                            </div>
+                            <div class="sizes-checkbox__item">
+                                <input type="checkbox" name="sizes[]" value="none">
+                                <span class="size__round">
+                                    <span class="size__name">
+                                            S
+                                    </span>
+                                </span>
+
+                            </div>
+                            <div class="sizes-checkbox__item">
+                                <input type="checkbox" name="sizes[]" value="none">
+                                <span class="size__round">
+                                    <span class="size__name">
+                                            M
+                                    </span>
+                                </span>
+
+                            </div>
+                            <div class="sizes-checkbox__item">
+                                <input type="checkbox" name="sizes[]" value="none">
+                                <span class="size__round">
+                                    <span class="size__name">
+                                            L
+                                    </span>
+                                </span>
+
+                            </div>
+                            <div class="sizes-checkbox__item">
+                                <input type="checkbox" name="sizes[]" value="none">
+                                <span class="size__round">
+                                    <span class="size__name">
+                                            XL
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="sizes-checkbox__item">
+                                <input type="checkbox" name="sizes[]" value="none">
+                                <span class="size__round">
+                                    <span class="size__name">
+                                            XXL
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="sizes-checkbox__item">
+                                <input type="checkbox" name="sizes[]" value="none">
+                                <span class="size__round">
+                                    <span class="size__name">
+                                            3XL
+                                    </span>
+                                </span>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="widget widget-color">
+                        <div class="widget__header">
+                            <span class="widget-title">COLOR</span>
+                        </div>
+                        <div class="widget-colors-checkbox__list">
+                            <div class="colors-checkbox__item active">
+                                <input type="checkbox" name="colors[]" value="none">
+                                <span class="color__round">
+                                    <span class="color__round-inner" style="background-color:#000000;">
+
+                                    </span>
+                                </span>
+
+                            </div>
+                            <div class="colors-checkbox__item">
+                                <input type="checkbox" name="colors[]" value="none">
+                                <span class="color__round">
+                                    <span class="color__round-inner" style="background-color:#dc8e6a;">
+
+                                    </span>
+                                </span>
+
+                            </div>
+                            <div class="colors-checkbox__item">
+                                <input type="checkbox" name="colors[]" value="none">
+                                <span class="color__round">
+                                    <span class="color__round-inner" style="background-color:#9f755e;">
+
+                                    </span>
+                                </span>
+
+                            </div>
+                            <div class="colors-checkbox__item">
+                                <input type="checkbox" name="colors[]" value="none">
+                                <span class="color__round">
+                                    <span class="color__round-inner" style="background-color:#b1c350;">
+
+                                    </span>
+                                </span>
+
+                            </div>
+                            <div class="colors-checkbox__item">
+                                <input type="checkbox" name="colors[]" value="none">
+                                <span class="color__round">
+                                    <span class="color__round-inner" style="background-color:#333d4f;">
+
+                                    </span>
+                                </span>
+
+                            </div>
+                            <div class="colors-checkbox__item">
+                                <input type="checkbox" name="colors[]" value="none">
+                                <span class="color__round">
+                                    <span class="color__round-inner" style="background-color:#8b7095;">
+
+                                    </span>
+                                </span>
+
+                            </div>
+                            <div class="colors-checkbox__item">
+                                <input type="checkbox" name="colors[]" value="none">
+                                <span class="color__round">
+                                    <span class="color__round-inner" style="background-color:#ededed;">
+
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="colors-checkbox__item">
+                                <input type="checkbox" name="colors[]" value="none">
+                                <span class="color__round">
+                                    <span class="color__round-inner" style="background-color:#ec60e1;">
+
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget widget-price">
+                        <div class="widget__header">
+                            <span class="widget-title">PRICE</span>
+                        </div>
+                        <div class="widget-price-range">
+                            <input type="text" id="price-ranger" name="my_range" value=""/>
+                        </div>
+                    </div>
+                    <div class="widget widget-price">
+                        <div class="widget__header">
+                            <span class="widget-title">PRICE</span>
+                        </div>
+                        <div class="widget-price-sort">
+                            <div class="price-sort-checkbox__item">
+                                <input type="checkbox" name="categories[]" value="none">
+                                <span class="category__name">None</span>
+                            </div>
+                            <div class="price-sort-checkbox__item">
+                                <input type="checkbox" name="categories[]" value="popularity">
+                                <span class="category__name">Popularity</span>
+                            </div>
+                            <div class="price-sort-checkbox__item">
+                                <input type="checkbox" name="categories[]" value="average rating">
+                                <span class="category__name">Average rating</span>
+                            </div>
+                            <div class="price-sort-checkbox__item">
+                                <input type="checkbox" name="categories[]" value="newness">
+                                <span class="category__name">Newness</span>
+                            </div>
+                            <div class="price-sort-checkbox__item">
+                                <input type="checkbox" name="categories[]" value="lowtohigh">
+                                <span class="category__name">Price: low to high</span>
+                            </div> <div class="price-sort-checkbox__item">
+                            <input type="checkbox" name="categories[]" value="hightolow">
+                            <span class="category__name">Price: high to low</span>
+                        </div>
+
+                        </div>
+                    </div>
+                    <div class="hot-sale ">
+                        <a href="javascript:;" class="hot-sale__link d-block">
+                            <img src="../lebe/img/bn-sidebar.webp" class="media__image img-fluid" alt="">
+                        </a>
+                    </div>
+                </section>
+            </div>
+
+            <div class="col-lg-9">
+
+                <!--                <div class="banner mb-4">-->
+                <!--                    <img src="./img/bg_cate.webp" class="img-fluid">-->
+                <!--                </div>-->
+                <section id="products">
+                    <div class="products-filter">
+                        <div class="filter-button float-left">
+                            <span class="flaticon-filter"></span>
+                            <span class="filter__text">FILTER</span>
+                        </div>
+                        <div class="filter-tags">
+                            <span class="filter-tag-item">
+                                <span class="tag-close-item" tags-value="popularity"></span>
+                                <span class="tag-item-name">Popularity</span>
+                            </span>
+                            <span class="filter-tag-item">
+                                <span class="tag-close-item" tags-value="green"></span>
+                                <span class="tag-item-name">Green</span>
+                            </span>
+                        </div>
+                        <div class="products-sort float-right">
+                            <div class="product-sizes float-left">
+                                <svg viewBox="0 0 16 16" id="view-size-5" class="view-per-page__button extra ">
+                                    <path d="M4.769 3.385c0 .762-.623 1.385-1.385 1.385S2 4.146 2 3.385 2.623 2 3.385 2s1.384.623 1.384 1.385zM9.385 3.385c0 .762-.623 1.385-1.385 1.385s-1.385-.624-1.385-1.385S7.238 2 8 2s1.385.623 1.385 1.385zM4.769 8c0 .762-.623 1.385-1.385 1.385S2 8.762 2 8s.623-1.385 1.385-1.385S4.769 7.238 4.769 8zM9.385 8c0 .762-.623 1.385-1.385 1.385S6.615 8.762 6.615 8 7.238 6.615 8 6.615 9.385 7.238 9.385 8zM4.769 12.615c0 .762-.623 1.385-1.384 1.385S2 13.377 2 12.615s.623-1.385 1.385-1.385 1.384.624 1.384 1.385zM9.385 12.615C9.385 13.377 8.762 14 8 14s-1.385-.623-1.385-1.385.623-1.384 1.385-1.384 1.385.623 1.385 1.384zM14 3.385c0 .762-.623 1.385-1.385 1.385s-1.385-.623-1.385-1.385S11.854 2 12.615 2C13.377 2 14 2.623 14 3.385zM14 8c0 .762-.623 1.385-1.385 1.385S11.231 8.762 11.231 8s.623-1.385 1.385-1.385C13.377 6.615 14 7.238 14 8zM14 12.615c0 .762-.623 1.385-1.385 1.385s-1.385-.623-1.385-1.385.623-1.385 1.385-1.385A1.39 1.39 0 0 1 14 12.615z"></path>
+                                </svg>
+                                <svg viewBox="0 0 16 16" id="view-size-4" class="view-per-page__button medium active">
+                                    <path d="M7 4.5C7 5.875 5.875 7 4.5 7S2 5.875 2 4.5 3.125 2 4.5 2 7 3.125 7 4.5zM14 4.5C14 5.875 12.875 7 11.5 7S9 5.875 9 4.5 10.125 2 11.5 2 14 3.125 14 4.5zM7 11.5C7 12.875 5.875 14 4.5 14S2 12.875 2 11.5 3.125 9 4.5 9 7 10.125 7 11.5zM14 11.5c0 1.375-1.125 2.5-2.5 2.5S9 12.875 9 11.5 10.125 9 11.5 9s2.5 1.125 2.5 2.5z"></path>
+                                </svg>
+                                <svg viewBox="0 0 16 16" id="view-size-3" class="view-per-page__button single ">
+                                    <path d="M14 8c0 3.3-2.7 6-6 6s-6-2.7-6-6 2.7-6 6-6 6 2.7 6 6z"></path>
+                                </svg>
+                            </div>
+                            <div class="products-orderby float-left">
+                                <form action="" method="get" class="orderby-form">
+                                    <select name="orderby" class="orderby">
+                                        <option value="popularity" selected="selected">Sort by popularity</option>
+                                        <option value="rating">Rating</option>
+                                        <option value="date">Newness</option>
+                                        <option value="price">Price: low</option>
+                                        <option value="price-desc">Price: high</option>
+                                    </select>
+                                </form>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="product-list">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="product-item">
+                                    <div class="p-image">
+                                        <a href="#" class="d-block">
+                                            <img src="../lebe/img/MA-BL-SY-M-4_1024x1024.png" class="img-fluid">
+                                        </a>
+                                    </div>
+                                    <div class="p-info">
+                                        <h3 class="p__title"><a href="#">Women's flyde classic outer</a></h3>
+                                        <p class="p__price">$69.00</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="product-item">
+                                    <div class="p-image">
+                                        <a href="#" class="d-block">
+                                            <img src="../lebe/img/MP-CM-VAT-LG-1.png" class="img-fluid">
+                                        </a>
+                                    </div>
+                                    <div class="p-info">
+                                        <h3 class="p__title"><a href="#">Women's flyde classic outer</a></h3>
+                                        <p class="p__price">$69.00</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="product-item">
+                                    <div class="p-image">
+                                        <a href="#" class="d-block">
+                                            <img src="../lebe/img/Perfil_SS18_Scale7_800x.png" class="img-fluid">
+                                        </a>
+                                    </div>
+                                    <div class="p-info">
+                                        <h3 class="p__title"><a href="#">Product title</a></h3>
+                                        <p class="p__price">$69.00</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="product-item">
+                                    <div class="p-image">
+                                        <a href="#" class="d-block">
+                                            <img src="../lebe/img/MP-EM-ESS-WH-1.png" class="img-fluid">
+                                        </a>
+                                    </div>
+                                    <div class="p-info">
+                                        <h3 class="p__title"><a href="#">Product title</a></h3>
+                                        <p class="p__price">$69.00</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="product-item">
+                                    <div class="p-image">
+                                        <a href="#" class="d-block">
+                                            <img src="../lebe/img/Fagel-LG-KEY_800x.png" class="img-fluid">
+                                        </a>
+                                    </div>
+                                    <div class="p-info">
+                                        <h3 class="p__title"><a href="#">Product title</a></h3>
+                                        <p class="p__price">$69.00</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="product-item">
+                                    <div class="p-image">
+                                        <a href="#" class="d-block">
+                                            <img src="../lebe/img/MP-CW-KOS-NN-1.png" class="img-fluid">
+                                        </a>
+                                    </div>
+                                    <div class="p-info">
+                                        <h3 class="p__title"><a href="#">Product title</a></h3>
+                                        <p class="p__price">$69.00</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="product-item">
+                                    <div class="p-image">
+                                        <a href="#" class="d-block">
+                                            <img src="../lebe/img/Perfil_SS18_Scale8_1800x.png" class="img-fluid">
+                                        </a>
+                                    </div>
+                                    <div class="p-info">
+                                        <h3 class="p__title"><a href="#">Product title</a></h3>
+                                        <p class="p__price">$69.00</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="product-item">
+                                    <div class="p-image">
+                                        <a href="#" class="d-block">
+                                            <img src="../lebe/img/MP-CM-FCO-SY-1.png" class="img-fluid">
+                                        </a>
+                                    </div>
+                                    <div class="p-info">
+                                        <h3 class="p__title"><a href="#">Product title</a></h3>
+                                        <p class="p__price">$69.00</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="product-item">
+                                    <div class="p-image">
+                                        <a href="#" class="d-block">
+                                            <img src="../lebe/img/MA-CA-RR-M-1_347b6227-a890-4027-b517-48e972cd0f51_1024x1024.png"
+                                                 class="img-fluid">
+                                        </a>
+                                    </div>
+                                    <div class="p-info">
+                                        <h3 class="p__title"><a href="#">Product title</a></h3>
+                                        <p class="p__price">$69.00</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="product-item">
+                                    <div class="p-image">
+                                        <a href="#" class="d-block">
+                                            <img src="../lebe/img/MP-CW-FCO-BB-1.png" class="img-fluid">
+                                        </a>
+                                    </div>
+                                    <div class="p-info">
+                                        <h3 class="p__title"><a href="#">Product title</a></h3>
+                                        <p class="p__price">$69.00</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="product-item">
+                                    <div class="p-image">
+                                        <a href="#" class="d-block">
+                                            <img src="../lebe/img/MA-NB-LG-GG-M-1_1024x1024.png" class="img-fluid">
+                                        </a>
+                                    </div>
+                                    <div class="p-info">
+                                        <h3 class="p__title"><a href="#">Product title</a></h3>
+                                        <p class="p__price">$69.00</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4">
+                                <div class="product-item">
+                                    <div class="p-image">
+                                        <a href="#" class="d-block">
+                                            <img src="../lebe/img/MA-B-1-LG-SY-2_grande%20(1).png" class="img-fluid">
+                                        </a>
+                                    </div>
+                                    <div class="p-info">
+                                        <h3 class="p__title"><a href="#">Product title</a></h3>
+                                        <p class="p__price">$69.00</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="products-pagination">
+                        <nav aria-label="Products pagination">
+                            <ul class="pagination">
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                        <i class="fa fa-angle-left" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                        <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer id="footer">
+    <section id="footer-main">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="footer-menu">
+                                <h3 class="menu__title">
+                                    COMPANY
+                                </h3>
+                                <ul class="list-unstyled">
+                                    <li><a href="javascript:;">Our Story</a></li>
+                                    <li><a href="javascript:;">Eureka</a></li>
+                                    <li><a href="javascript:;">Projects</a></li>
+                                    <li><a href="javascript:;">Thinkers</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="footer-menu">
+                                <h3 class="menu__title">
+                                    Infomation
+                                </h3>
+
+                                <ul class="list-unstyled">
+                                    <li><a href="javascript:;">Help</a></li>
+                                    <li><a href="javascript:;">Feedback</a></li>
+                                    <li><a href="javascript:;">Returns</a></li>
+                                    <li><a href="javascript:;">Press</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div id="footer-logo">
+                        <a href="javascript:;">
+                            <img src="../lebe/img/logo-footer-main-1.webp" alt="lebe minimal shop">
+                        </a>
+                    </div>
+
+                </div>
+                <div class="col-md-4">
+                    <div class="newsletters">
+                        <h3 class="newsletters__title text-center">Don't miss out on the latest.</h3>
+                        <div class="newsletter__description text-center">
+                            Get notified of new products, limited releases, and more.
+                        </div>
+                        <div class="newsletter-form">
+                            <form action="#" method="get">
+                                <input class="newsletter-email float-left" type="email" name="email"
+                                       placeholder="Email Address">
+                                <button type="submit" name="submit_button"
+                                        class="btn-submit newsletter-submit float-left">
+                                    SUBMIT
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="footer-sub">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="social-list">
+                        <a class="social-item" href="#" target="_blank">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+
+                        <a class="social-item" href="#" target="_blank">
+                            <i class="fa fa-dribbble"></i>
+                        </a>
+                        <a class="social-item" href="#" target="_blank">
+                            <i class="fa fa-behance"></i>
+                        </a>
+                        <a class="social-item" href="#" target="_blank">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <p class="copyright">© 2018 Famithemes. All rights reserved</p>
+                </div>
+                <div class="col-md-4">
+                    <img src="../lebe/img/payment-img.webp" alt="payment card" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </section>
+</footer>
+
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="../lebe/js/jquery-3.5.1.min.js"></script>
+<script src="../lebe/js/bootstrap.bundle.min.js"></script>
+<!-- Library:Slick slider-->
+<script type="text/javascript" src="../lebe/libs/slick/slick.min.js"></script>
+<!--Library:Ion range slider-->
+<script type="text/javascript" src="../lebe/libs/ion-range-slider/js/ion.rangeSlider.min.js"></script>
+
+
+<!--Customize:Javascript-->
+<script>
+    $("#price-ranger").ionRangeSlider({
+        type: "double",
+        min: 30,
+        max: 3450,
+        from: 30,
+        to: 3450,
+        prefix: "$",
+        decorate_both: false // false,
+        // values_separator: " to "
+    });
+</script>
+</body>
+</html>

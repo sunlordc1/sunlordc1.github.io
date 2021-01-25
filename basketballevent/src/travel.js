@@ -487,7 +487,7 @@ layout = {
               <div class="top-bar" id="fpl-basketball">
                 <div class="top-bar-left">
                   <ul class="dropdown menu" data-dropdown-menu>
-                    <li class="menu-item home ${slugPage == "home" ? 'active-menu' : ''}" data-page="home"><img src="./src/library/images/logo.PNG" width="50px" height="50px"/><span class="menu-title-mobile">Trang chủ</span></li>
+                    <li class="menu-item home ${slugPage == "home" ? 'active-menu' : ''}" data-page="home"><img src="./src/library/images/logo.png" width="50px" height="50px"/><span class="menu-title-mobile">Trang chủ</span></li>
                     <li class="menu-item ${slugPage == "player" ? 'active-menu' : ''}" data-page="player"><a href="#">Cầu thủ</a></li>
                     <li class="menu-item ${slugPage == "event" ? 'active-menu' : ''}" data-page="event"><a href="#">Luật lệ & Nội dung sự kiện</a></li>
                     <li class="menu-item ${slugPage == "pick-and-round" ? 'active-menu' : ''}" data-page="pick-and-round"><a href="#">Pick and round</a></li>

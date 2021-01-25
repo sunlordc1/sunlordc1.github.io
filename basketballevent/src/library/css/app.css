@@ -1,0 +1,473 @@
+#content{
+  background: url(../images/background2020.jpg);
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+.fpl-player-thumbmail a{
+    display: block
+  }
+  /* .fpl-player-thumbmail:hover img{
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  } */
+  .fpl-player-block{
+    margin-bottom: 40px;border-color: #e6e6e6;    position: relative;cursor:pointer;outline:none;
+  }
+  .fpl-player-name a{
+    font-family: 'Open Sans', sans-serif;
+    /* letter-spacing: 3px; */
+    font-size: 21px;
+  }
+  .fpl-player-name-pick a{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+  }
+  .image-block-pick img{
+    border-radius: 4px;
+  }
+  .fpl-player-block:hover .fpl-player-name a{
+    transition: 0.8s;
+    color:orange;
+  
+  }
+  .fpl-player-thumbmail:hover img{
+    transition: opacity 300ms ease-out, transform 300ms ease-out, filter 300ms ease-out;
+  -moz-transition: opacity 300ms ease-out, -moz-transform 300ms ease-out, -moz-filter 300ms ease-out;
+  -o-transition: opacity 300ms ease-out, -o-transform 300ms ease-out, -o-filter 300ms ease-out;
+  -webkit-transition: opacity 300ms ease-out, -webkit-transform 300ms ease-out, -webkit-filter 300ms ease-out;
+  }
+  .img-responsive{
+    max-width: 100%;
+  height: auto;
+  }
+  .fpl-player-content{
+    position: absolute;
+    padding: 0px 15px 15px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    height: 60px;
+  }
+  .fpl-player-point{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: #f7921e;
+    font-size: 15px;
+    font-weight: bold;
+    float: left;
+    padding: 7px 11px;
+    margin-right: 9px;
+    min-width: 55px;
+    text-align: center;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    color: #fff;
+  }
+  .fpl-player-info{
+    overflow: hidden;
+    padding-top: 3px;
+  }
+  .fpl-player-name{
+    font-size: 20px;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+  color: #383838;
+  line-height: 1.2;
+  font-weight: 700;
+  margin-top: 0px;
+  }
+  .fpl-player-name a{
+    color: #fff
+    
+  }
+  .fpl-player-position{
+    color: white;
+    background:orange;
+    font-family: 'Open Sans', sans-serif;
+    font-size:16px;
+    padding:10px 12px;
+    position:absolute;
+    top:55px;
+    border-radius: 50%;
+    left:10px;
+  }
+  .fpl-player-team-logo{
+    color: white;
+    width: 48px;
+    height: 48px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    position: absolute;
+    top: 3px;
+    border-radius: 50%;
+    right: 4px;
+  }
+  .fpl-player-position-2{
+    color: white;
+    background:orange;
+    font-family: 'Open Sans', sans-serif;
+    font-size:16px;
+    padding:10px 12px;
+    position:absolute;
+    top: 105px;
+    border-radius: 50%;
+    left:10px;
+  }
+  #header{
+      padding-top: 15px;
+      padding-bottom: 15px;
+
+  }
+  #header h1{
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 2rem;
+    width: 300px;
+    display: table;
+    margin: 0 auto;
+    font-family: 'Open Sans', sans-serif;
+    background: orange;
+    color: white;
+    text-transform: unset;
+  }
+  .reload{
+    position: absolute;top:0;right:20px;z-index: 99;background: orange;padding: 20px;cursor: pointer;color:white;
+  }
+  .fpl-player-overlay{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background: linear-gradient( to bottom, rgba(0,0,0,0), rgba(0,0,0,0.95) 98% );
+    pointer-events: none;
+  }
+  .top-bar, .top-bar ul {
+    background-color: orange;
+}
+div#example-menu {
+  background: orange;
+}
+li.menu-text {
+  color: white !important;
+}
+a {
+  color: white;
+}
+
+#fpl-basketball li[role="menuitem"]:hover a,#fpl-basketball li[role="menuitem"] a:focus,#fpl-basketball li[role="menuitem"] a:active{
+  text-decoration: underline;
+}
+#fpl-basketball li[role="menuitem"] a,#fpl-basketball li[role="menuitem"]{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+}
+#fpl-basketball li[role="menuitem"]:hover{
+  background: white;
+}
+#fpl-basketball li[role="menuitem"]:hover a,#fpl-basketball li[role="menuitem"]:active a,#fpl-basketball li[role="menuitem"]:focus a{
+  color: orange;
+  text-decoration: none;
+}
+#fpl-basketball li[role="menuitem"] span {
+  padding: .7rem 1rem;
+}
+#fpl-basketball{
+  padding: 0 !important
+}
+.image-block img{
+  height: 360px;
+  width: 100%;
+  object-fit: cover
+}
+.image-block-pick img{
+  height: 300px;
+  width: 100%;
+  object-fit: cover
+}
+.top-bar, .top-bar ul{
+
+border-bottom: 3px solid white;
+}
+.image-block img{
+  border-radius: 3.5px;
+}
+.fpl-player-block{
+  border-radius: 15px;
+  border:10px solid orange;
+}
+.menu li{
+  padding: 10px 5px
+}
+
+.home{
+  padding-right: 30px !important;
+  padding-left: 30px !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  cursor: pointer;
+}
+.active-menu{
+  background: white;
+}
+.active-menu a{
+  color:orange;
+
+}
+.home:hover img{
+  transition: 0.5s;
+  transform: scale(1.30,1.30)
+}
+.menu-title-mobile{
+  display: none
+}
+ 
+
+.title-bar {
+  background: orange;
+}
+span.player-profile-score{
+  position: absolute;
+  bottom: calc(5px + 2%);
+  left: calc(5px + 2%);
+  background: orange;
+  padding: 15px;
+  font-size: 22px;
+  color: white;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 1px;
+}
+span.player-profile-position {
+  position: absolute;
+  top: calc(5px + 2%);
+  left: calc(5px + 2%);
+  background: orange;
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 22px;
+  color: white;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 1px;
+}
+.player-profile-position-2 {
+  position: absolute;
+  top: calc(80px + 1%);
+  left: calc(5px + 2%);
+  background: orange;
+  border-radius: 50%;
+  padding: 15px;
+  font-size: 22px;
+  color: white;
+  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 1px;
+}
+.player-profile-name{
+  text-align:center;
+  font-family: 'Open Sans', sans-serif;
+  color:white;
+  background:orange;
+  margin-top:35px;
+}
+.player-profile-note{
+  padding:0 10px;
+  margin-left:5px;
+  margin-right:5px;
+}
+.player-profile-note p{
+  font-size:18px;
+  text-align:justify
+}
+.player-profile-note .note{
+  font-weight: bold;
+  font-size:18px
+}
+.fpl-club{
+  height:auto;
+  width:100%;
+  float:left;
+  display:block;
+  border-radius:50%;
+  cursor:pointer;
+  transition: 0.5s;
+  border: 3px solid transparent;
+  margin: 5px;
+
+}
+
+.fpl-club:hover{
+  transform: scale(1.2,1.2)
+}
+.team-active{
+  transition: 0.5s;
+  border: 3px solid orange;
+  margin: 5px;
+}
+.add-player-button{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Open Sans', sans-serif;
+  font-size:6rem;
+  color:orange;
+  cursor:pointer
+}
+.add-player-text{
+  position: absolute;
+  left: 50%;
+  text-align: center;
+  top: 20%;
+  width: 80%;
+  transform: translate(-50%, -50%);
+  font-family: 'Open Sans', sans-serif;
+  font-size:1rem;
+  color:orange;
+  cursor:pointer
+}
+.fpl-player-add{
+  background: white;
+    border: 10px solid orange;
+    height: 320px;
+    position: relative;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.fpl-draft-player-add{
+  background: rgba(255, 255, 255, 0.8);
+    height: 50px;
+    margin-bottom: 10px;
+    position: relative;
+    /* border-radius: 20px; */
+    cursor: pointer;
+}
+.fpl-draft-logo-team{
+  width:50px;
+  height:50px;
+  float:left;
+}
+.fpl-draft-player-name{
+  padding: 0 5px;
+  float: left;
+  max-width: calc(100% - 50px);
+  font-weight: bold;
+  color:white;
+}
+.fpl-player-add{
+  outline: none;
+}
+.player-pick-block{
+  margin-bottom: 50px;
+  position: relative;
+}
+.fpl-player-push-back,.fpl-player-change{
+  width: 50%;
+  position: absolute;
+  font-family: Arial, Helvetica, sans-serif;
+  color:white;
+  font-weight: bold;
+  bottom:-35px;
+  background: #f7921e;
+  height: 30px;
+  margin-left: -1px;
+    margin-right: -1px;
+    border-radius: 4px;
+  cursor: pointer;
+}
+.fpl-total-points{
+  color: orange;
+  background: white;
+  width: 260px;
+  border-top: 8px solid orange;
+  border-bottom: 3px solid orange;
+  font-weight: bold;
+  font-size: 20px;
+  text-align: center;
+  margin: 30px auto;
+  display: block;
+}
+.fpl-player-filter {
+  background: orange;
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.fpl-player-filter:hover {
+  background: #eda41e;
+}
+#fpl-player-list-block h1,#fpl-player-list-block h1 i{
+  text-shadow: -1px -1px 0px rgba(255,255,255,0.3), 1px 1px 0px #ffae009e;
+  color: orange;
+}
+.fpl-player-push-back:hover,.fpl-player-change:hover{
+  background: white;
+  color: orange;
+}
+.fpl-player-push-back:hover{
+  border-left:1px solid orange;
+  border-bottom: 1px solid orange;
+}
+.fpl-player-change:hover{
+  border-right:1px solid orange;
+  border-bottom: 1px solid orange;
+}
+.fpl-player-push-back{
+  left:0;
+  border-right:1px solid white;
+}
+.fpl-player-change{
+  right:0;
+}
+#content {
+  min-height: 100vh;
+  padding-bottom: 20px;
+}
+.fpl-player-name-pick{
+  font-size: 1.5rem;
+  line-height: 1;
+}
+@media only screen and (max-width:767px){
+  .reload{
+    padding: 11px;
+  }
+  .fpl-club{
+    width: calc(25% - 10px);
+  }
+  .menu-title-mobile{
+    display: block;
+    color:white;
+  }
+  .active-menu span.menu-title-mobile{
+    color:orange !important
+  }
+  li.home{
+    padding: 10px 5px !important;
+  
+  }
+  li.home span{
+    padding: .7rem 1rem !important;
+    line-height: 1
+  }
+  li.home img{display: none}
+  #fpl-basketball li[role="menuitem"]{
+    width: 100%;
+  }
+  .fpl-player-add,.image-block-pick img{
+    height: 500px;
+  }
+  .fpl-player-name-pick a {
+    font-size: 20px;
+  }
+}
+@media only screen and (max-width:480px){
+  .fpl-club{
+    width: calc(25% - 10px);
+  }
+  
+}

@@ -768,7 +768,126 @@ data = {
             "height": "1m60",
             "team_id": "1"
         },
-
+        {
+            "id": "4",
+            "name": "Nguyễn Vũ Hoàng ",
+            "point": 10,
+            "image": "./src/library/images/p6.jpg",
+            "notes":  "Ném trung bình khá,quan sát vị trí,chạy chỗ kiến tạo ,dẫn bóng 8/10 ",
+            "position": "SG",
+            "position2": "SF",
+            "age": "24",
+            "height": "1m60",
+            "team_id": "3"
+        },
+        {
+            "id": "13",
+            "name": "Nam Trần",
+            "point": 10,
+            "image": "./src/library/images/p7.jpg",
+            "notes":  "co kinh nghiem",
+            "position": "",
+            "position2": "",
+            "age": "0",
+            "height": "0",
+            "team_id": "3"
+        },
+        {
+            "id": "5",
+            "name": "Trịnh công Sơn",
+            "point": 10,
+            "image": "./src/library/images/p8.jpg",
+            "notes":  "sonhandsome, phòng thủ",
+            "position": "C",
+            "position2": "PF",
+            "age": "0",
+            "height": "0",
+            "team_id": "3"
+        },
+        {
+            "id": "6",
+            "name": "Ngọc Linh",
+            "point": 10,
+            "image": "./src/library/images/p9.jpg",
+            "notes":  "Là sv năm 2 trường fpoly",
+            "position": "C",
+            "position2": "",
+            "age": "0",
+            "height": "0",
+            "team_id": "3"
+        },
+        {
+            "id": "7",
+            "name": "Nguyễn Tấn Minh",
+            "point": 10,
+            "image": "./src/library/images/p10.jpg",
+            "notes":  "newbie",
+            "position": "PG",
+            "position2": "",
+            "age": "0",
+            "height": "0",
+            "team_id": "3"
+        },
+        {
+            "id": "8",
+            "name": "Phạm Huy Hoàng",
+            "point": 10,
+            "image": "./src/library/images/p11.jpg",
+            "notes":  "newbie",
+            "position": "PG",
+            "position2": "",
+            "age": "0",
+            "height": "0",
+            "team_id": "3"
+        },
+        {
+            "id": "9",
+            "name": "Nguyễn Viết Tùng",
+            "point": 10,
+            "image": "./src/library/images/p12.jpg",
+            "notes":  "newbie",
+            "position": "PG",
+            "position2": "",
+            "age": "0",
+            "height": "0",
+            "team_id": "3"
+        },
+        {
+            "id": "10",
+            "name": "Hoàng Đức Huy",
+            "point": 10,
+            "image": "./src/library/images/p13.jpg",
+            "notes":  "Ko phải Fuckboi :)))",
+            "position": "C",
+            "position2": "SG",
+            "age": "0",
+            "height": "0",
+            "team_id": "3"
+        },
+        {
+            "id": "11",
+            "name": "Biện Hùng Đức",
+            "point": 10,
+            "image": "./src/library/images/p14.jpg",
+            "notes":  "captain tin mình thì mình sẽ cố gắng hết sức :)) ",
+            "position": "SF",
+            "position2": "PF",
+            "age": "0",
+            "height": "0",
+            "team_id": "3"
+        },
+        {
+            "id": "12",
+            "name": "Vawn Tris",
+            "point": 10,
+            "image": "./src/library/images/p15.jpg",
+            "notes":  "Xin phép kí tặng đội đối thủ 8 điểm",
+            "position": "PG",
+            "position2": "SF",
+            "age": "0",
+            "height": "0",
+            "team_id": "3"
+        },
     ],
     team: [
         {

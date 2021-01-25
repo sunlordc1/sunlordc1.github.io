@@ -736,14 +736,38 @@ data = {
             "name": "Nguyễn Tiến Đạt",
             "point": 10,
             "image": "./src/library/images/p5.jpg",
-            "notes": "Mình không định lấy đâu ahihi",
+            "notes": "phản công tốt,thủ tốt,rebound tốt",
             "position": "PG",
             "position2": "SF",
             "age": "24",
             "height": "1m60",
             "team_id": "3"
         },
-
+        {
+            "id": "0",
+            "name": "Hà Thạch Sơn",
+            "point": 10,
+            "image": "./src/library/images/p4.jpg",
+            "notes": "“Ăn gì lấy nốt ra đây cho a thanh toán”",
+            "position": "PF",
+            "position2": "SF",
+            "age": "18",
+            "height": "1m65",
+            "team_id": "3"
+        }
+        ,
+        {
+            "id": "1",
+            "name": "Nam Con",
+            "point": 10,
+            "image": "./src/library/images/p3.jpg",
+            "notes":  "Mình không định lấy đâu ahihi",
+            "position": "PG",
+            "position2": "SF",
+            "age": "24",
+            "height": "1m60",
+            "team_id": "1"
+        },
 
     ],
     team: [

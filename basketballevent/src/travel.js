@@ -770,18 +770,6 @@ data = {
             "team_id": "3"
         },
         {
-            "id": "5",
-            "name": "Trịnh công Sơn",
-            "point": 10,
-            "image": "./src/library/images/p8.jpg",
-            "notes":  "sonhandsome, phòng thủ",
-            "position": "C",
-            "position2": "PF",
-            "age": "0",
-            "height": "0",
-            "team_id": "3"
-        },
-        {
             "id": "6",
             "name": "Ngọc Linh",
             "point": 10,

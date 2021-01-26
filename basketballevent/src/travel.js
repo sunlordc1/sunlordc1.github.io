@@ -773,7 +773,7 @@ data = {
             "id": "5",
             "name": "Bùi ngọc long",
             "point": 10,
-            "image": "./src/library/images/23.jpg",
+            "image": "./src/library/images/p23.jpg",
             "notes":  "",
             "position": "PG",
             "position2": "SF",

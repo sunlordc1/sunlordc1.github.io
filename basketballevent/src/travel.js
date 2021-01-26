@@ -766,7 +766,7 @@ data = {
             "position2": "SF",
             "age": "24",
             "height": "1m60",
-            "team_id": "1"
+            "team_id": "3"
         },
         {
             "id": "4",
@@ -878,7 +878,7 @@ data = {
         },
         {
             "id": "12",
-            "name": "Vawn Tris",
+            "name": "Văn Trí",
             "point": 10,
             "image": "./src/library/images/p15.jpg",
             "notes":  "Xin phép kí tặng đội đối thủ 8 điểm",
@@ -888,11 +888,83 @@ data = {
             "height": "0",
             "team_id": "3"
         },
+        {
+            "id": "13",
+            "name": "Tạ Tiến Quang",
+            "point": 10,
+            "image": "./src/library/images/p16.jpg",
+            "notes":  "Gần 6 tháng tập chơi bóng rổ",
+            "position": "SF",
+            "position2": "",
+            "age": "0",
+            "height": "0",
+            "team_id": "3"
+        },
+        {
+            "id": "14",
+            "name": "Việt Hakai",
+            "point": 10,
+            "image": "./src/library/images/p18.jpg",
+            "notes":  ":)) nhân tố bí ẩn",
+            "position": "All",
+            "position2": "",
+            "age": "0",
+            "height": "0",
+            "team_id": "3"
+        },
+        {
+            "id": "15",
+            "name": "Nguyễn Ngọc Tiệp",
+            "point": 10,
+            "image": "./src/library/images/p17.jpg",
+            "notes":  "Gà Công Nghiệp!!",
+            "position": "PG",
+            "position2": "SG",
+            "age": "0",
+            "height": "0",
+            "team_id": "3"
+        },
+        {
+            "id": "16",
+            "name": "Đỗ Chu An",
+            "point": 10,
+            "image": "./src/library/images/p19.jpg",
+            "notes":  "Mới chơi được 3 tháng,kinh nghiệm còn non,mới kiểm soát bóng thuần thục 1 chút",
+            "position": "PG",
+            "position2": "",
+            "age": "0",
+            "height": "0",
+            "team_id": "3"
+        },
+        {
+            "id": "17",
+            "name": "Bùi Đăng Chính",
+            "point": 10,
+            "image": "./src/library/images/p20.jpg",
+            "notes":  "Cân hết mọi đối thủ ",
+            "position": "All",
+            "position2": "",
+            "age": "0",
+            "height": "0",
+            "team_id": "3"
+        },
+        {
+            "id": "18",
+            "name": "Trần Minh Hiếu",
+            "point": 10,
+            "image": "./src/library/images/p21.jpg",
+            "notes":  "chơi đc 1 năm",
+            "position": "PG",
+            "position2": "PF",
+            "age": "0",g
+            "height": "0",
+            "team_id": "3"
+        },
     ],
     team: [
         {
             id: "1",
-            name: 'TTS',
+            name: 'Team Thạch Sơn',
             logo: './src/library/images/p4.jpg',
             info: 'Team Hà Thạch Sơn',
             listPlayer: [
@@ -914,7 +986,7 @@ data = {
         },
         {
             id: "2",
-            name: 'TNC',
+            name: 'Team Nam Con',
             logo: './src/library/images/p3.jpg',
             info: 'Team NamCon',
             listPlayer: [

@@ -856,7 +856,7 @@ data = {
             "id": "10",
             "name": "Hoàng Đức Huy",
             "point": 10,
-            "image": "./src/library/images/p13.jpg",
+            "image": "./src/library/images/p22.jpg",
             "notes":  "Ko phải Fuckboi :)))",
             "position": "C",
             "position2": "SG",

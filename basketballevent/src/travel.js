@@ -770,6 +770,18 @@ data = {
             "team_id": "3"
         },
         {
+            "id": "5",
+            "name": "Bùi ngọc long",
+            "point": 10,
+            "image": "./src/library/images/23.jpg",
+            "notes":  "",
+            "position": "PG",
+            "position2": "SF",
+            "age": "0",
+            "height": "0",
+            "team_id": "3"
+        },
+        {
             "id": "6",
             "name": "Ngọc Linh",
             "point": 10,

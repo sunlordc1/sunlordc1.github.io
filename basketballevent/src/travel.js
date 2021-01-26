@@ -956,7 +956,7 @@ data = {
             "notes":  "chơi đc 1 năm",
             "position": "PG",
             "position2": "PF",
-            "age": "0",g
+            "age": "0",
             "height": "0",
             "team_id": "3"
         },

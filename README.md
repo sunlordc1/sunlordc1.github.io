@@ -5,12 +5,13 @@
 * HTML5/CSS3
 * SASS/SCSS
 * [Link](./lebe/).
+* This site is not responsive
 
 >* 2: Basketball Draft Event
 * Foundation/Jquery
-* Javascript for Render view
+* Javascript
 * [Link](./basketballevent/).
-* This project for draft team use JSON for save player, data drive with LocalStorage
+* This project for draft team use JSON for save player,Javascript for render view data drive with LocalStorage
 
 >* 3: SyntaxJS
 * Javascript/HTML5/CSS3

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>JS SYNTAX</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            h2{
+                padding-top: 4px;
+            }
+            h1,
+            h2 {
+                font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+                color: rgb(29, 29, 29);
+            }
+            P,
+            small,
+            button {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            div[id^=block_]{
+                overflow-y: scroll;
+                height: 100vh;
+                position: relative;
+                padding: 8px;
+                width: 95vw;
+            }
+            button {
+                padding: 10px;
+                border-radius: 5px;
+                background: rgb(0, 85, 255);
+                color: white;
+                font-weight: bold;
+                cursor: pointer;
+                border: 0;
+                margin:4px 4px 4px 0 
+            }
+            button:active,
+            button:focus {
+                background: white;
+                color: rgb(0, 85, 255);
+            }
+            button:disabled{
+                background: rgb(161, 186, 236);
+            }
+            .heading {
+                position: sticky;
+                top: -8px;
+                width: 100%;
+                height: 80px;
+                border-bottom: 1px solid teal;
+                background: white;
+            }
+            code {
+                width: 100%;
+                display:block;
+                font-size: 1rem;
+            }
+            .pre{
+                margin-top: 8px;
+            }
+            .code{
+                padding: 5px;
+                background: whitesmoke;
+            }
+            space{
+                width: 12px;
+                height: 12px;
+                display: inline-table;
+            }
+            .content{padding:8px}
+        </style>
+    </head>
+    <body style="position: relative;">
+        <div id="container"></div>
+       
+    </body>
+    <script>
+        const data = {
+            ES5: {
+                title: "JS ES5",
+                index: 0,
+                data: [
+                    {
+                        title: "String.charAt()",
+                        description: "String | Index | get value by index in string | lấy ký tự trong string",
+                        code: [
+                        `var str = "HELLO WORLD";`,
+                         `str.charAt(0);`,
+                         `// hoặc `,
+                         `str[0]`,
+
+                        ],
+                    },
+                    {
+                        title: "String.trim()",
+                        description: "String | removes whitespace from both sides of a string | xóa khổng trống trong string",
+                        code: [
+                        `var str = "       Hello World!        ";`,
+                         `// return  Hello World!`,
+                        ],
+                    },
+                    {
+                        title: "Array.isArray()",
+                        description: "Array | method checks whether an object is an array. | kiểm tra biến có phải array không",
+                        code: [
+                        `var fruits = ["Banana", "Orange", "Apple", "Mango"];`,
+                         `var x = document.getElementById("demo");`,
+                         `x.innerHTML = Array.isArray(fruits);`,
+                         `//return boolean | true/false`
+                        ],
+                    },
+                    {
+                        title: "Array.forEach()",
+                        description: "Array | method calls a function once for each array element. | tạo vòng lặp mảng",
+                        code: [
+                        `-------METHOD-------`,
+                        `forEach((element) => { ... } )`,
+                        ` //OR`,
+                        `forEach(function callbackFn(element) { ... })`,
+                        `//OR`,
+                        `forEach(function callbackFn(element, index, array) { ... }, thisArg)`,
+                        `forEach((element, index) => { ... } )`,
+                        `forEach((element, index, array) => { ... } )`,
+                        `is_pre`,
+                        `-------NOTES-------`,
+                         `//DOES NOT  wait for promises. (async/await)`,
+                         `ratings.forEach(async function(rating) {`,
+                         `  sum = await sumFunction(sum, rating)`,
+                         `})`,
+                         `is_pre`,
+                         `----Using thisArg-------`,
+                         `function Counter() {`,
+                         `<space></space>this.sum = 0`,
+                         `<space></space>this.count = 0`,
+                         `is_pre`,
+                         `Counter.prototype.add = function(array) {`,
+                         `<space></space>array.forEach(function countEntry(entry) {`,
+                         `<space></space><space></space>this.sum += entry`,
+                         `<space></space><space></space>++this.count`,
+                         `<space></space>}, this)`,
+                         ` }`,
+                         `is_pre`,
+                         `  const obj = new Counter()`,
+                         `  obj.add([2, 5, 9])`,
+                         `  obj.count`,
+                         `  // 3`,
+                         `  obj.sum`,
+                         `  // 16`,
+                        ],
+                    },
+                    {
+                        title: "Array.map()",
+                        description: "Array | method checks whether an object is an array. | lặp phần tử trong mảng từ trái qua phải để trả về 1 giá trí",
+                        code: [
+                        `// Arrow function`,
+                        `map((element) => { ... })`,
+                         `map((element, index) => { ... })`,
+                         `map((element, index, array) => { ... })`,
+                         `is_pre`,
+                         `// Callback function`,
+                         `map(callbackFn)`,
+                         `map(callbackFn, thisArg)`,
+                         `is_pre`,
+                         `// Inline callback function`,
+                         `map(function callbackFn(element, index, array) { ... }, thisArg)`,
+                         `is_pre`,
+                         `---Mapping an array of numbers to an array of square roots---`,
+                         `let numbers = [1, 4, 9]`,
+                         `let roots = numbers.map(function(num) {`,
+                         `<space></space>return Math.sqrt(num)`,
+                         `})`,
+                         `// roots is now     [1, 2, 3]`,
+                         `// numbers is still [1, 4, 9]`
+                        ],
+                    },
+                    {
+                        title: "Array.filter()",
+                        description: "Array | method creates a new array with all elements that pass the test implemented by the provided function. | lặp phần tử trái qua phải trả về mảng dữ liệu đạt điều kiện đề ra",
+                        code: [
+                        `// Arrow function`,
+                        `filter((element, index, array) => { ... } )`,
+                         `is_pre`,
+                         `// Callback function`,
+                         `filter(callbackFn)`,
+                         `filter(callbackFn, thisArg)`,
+                         `is_pre`,
+                         `// Inline callback function`,
+                         `filter(function callbackFn(element, index, array) { ... }, thisArg)`,
+                         `is_pre`,
+                         `---Filter word length > 6 in array ---`,
+                         `const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];`,
+                         `const result = words.filter(word => word.length > 6);`,
+                         `console.log(result);`,
+                         `// expected output: Array ["exuberant", "destruction", "present"]`,
+                         `is_pre`,
+                         `---Find all prime numbers in an array---`,
+                         `const array = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];`,
+                         `is_pre`,
+                         `function isPrime(num) {`,
+                         `<space></space>for (let i = 2; num > i; i++) {`,
+                         `<space></space><space></space>if (num % i == 0) {`,
+                         `<space></space><space></space><space></space>return false;`,
+                         `<space></space><space></space>}`,
+                         `<space></space>}`,
+                         `return num > 1;`,
+                         `}`,
+                         `is_pre`,
+                         `console.log(array.filter(isPrime)); // [2, 3, 5, 7, 11, 13]`,
+                        ],
+                    },
+
+                ],
+            },
+            ES6: {
+                title: "JS ES6",
+                index: 1,
+                data: [
+                    {
+                        title: "charAt()",
+                        description: "String | Index | get value by index in string | lấy kí tự, chuỗi ký tự trong string",
+                        code: [`var str = "HELLO WORLD";`, `str.charAt(0);`],
+                    },
+                ],
+            },
+        };
+        // RENDER
+        function RENDER(data) {
+            for (let i in data) {
+                //block
+                let block = document.createElement("div");
+                block.id = `block_${data[i].index}`;
+                //heading
+                let heading = document.createElement("div");
+                heading.className = "heading"
+                let title = document.createElement("h1");
+                title.innerText = data[i].title;
+                heading.appendChild(title)
+         
+                //button PREV
+                let buttonPrev = document.createElement("button");
+                buttonPrev.setAttribute("onclick",`MOVE(${data[i].index-1})`);
+                buttonPrev.innerText = "PREV";
+                if(data[i].index <=0){
+                    buttonPrev.disabled = true;
+                }
+                heading.appendChild(buttonPrev)
+                //button NEXT
+                let buttonNext = document.createElement("button");
+                buttonNext.setAttribute("onclick",`MOVE(${data[i].index+1})`);
+                buttonNext.innerText = "NEXT";
+                if(data[i].index > Object.keys(data).length -1){
+                    buttonPrev.disabled = true;
+                }
+                heading.appendChild(buttonNext)
+                block.appendChild(heading)
+                //Content 
+                let content = document.createElement("div");
+                content.className = "content"
+                
+                data[i].data.forEach(data => {
+                    //title
+                    let title = document.createElement("h2");
+                    title.innerText = data.title;
+                    content.appendChild(title)
+                    
+                    //description
+                    let desc = document.createElement("small");
+                    desc.innerText = data.description;
+
+                    content.appendChild(desc)
+
+                    //code
+                    let codecontain = document.createElement("div");
+                    codecontain.className = "code"
+
+                    data.code.forEach(ele=>{
+                        if(ele !=`is_pre`){
+                            let code = document.createElement("code");
+                            code.innerHTML = ele;
+                            codecontain.appendChild(code)
+                        }else{
+                            let code = document.createElement("code");
+                            code.className = "pre"
+
+                            codecontain.appendChild(code)
+
+                        }
+                    
+                    })
+                    content.appendChild(codecontain)
+                 
+
+                });
+                block.appendChild(content)
+
+                //renderBlock
+                document.getElementById("container").appendChild(block);
+             
+                
+            }
+    
+        }
+        RENDER(data);
+        function MOVE(number) {
+                    let y = document.getElementById(`block_${number}`);
+                    document.documentElement.scrollTop = (number) * y.scrollHeight;
+                }
+        // SETIING
+    </script>
+</html>

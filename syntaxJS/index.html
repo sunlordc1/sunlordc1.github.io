@@ -9,8 +9,9 @@
             * {
                 margin: 0;
                 padding: 0;
+                box-sizing: border-box;
             }
-            h2{
+            h2 {
                 padding-top: 4px;
             }
             h1,
@@ -23,7 +24,7 @@
             button {
                 font-family: Arial, Helvetica, sans-serif;
             }
-            div[id^=block_]{
+            div[id^="block_"] {
                 overflow-y: scroll;
                 height: 100vh;
                 position: relative;
@@ -38,14 +39,14 @@
                 font-weight: bold;
                 cursor: pointer;
                 border: 0;
-                margin:4px 4px 4px 0 
+                margin: 4px 4px 4px 0;
             }
             button:active,
             button:focus {
                 background: white;
                 color: rgb(0, 85, 255);
             }
-            button:disabled{
+            button:disabled {
                 background: rgb(161, 186, 236);
             }
             .heading {
@@ -58,27 +59,57 @@
             }
             code {
                 width: 100%;
-                display:block;
+                display: block;
                 font-size: 1rem;
             }
-            .pre{
+            .pre {
                 margin-top: 8px;
             }
-            .code{
+            .code {
                 padding: 5px;
                 background: whitesmoke;
             }
-            space{
+            space {
                 width: 12px;
                 height: 12px;
                 display: inline-table;
             }
-            .content{padding:8px}
+            .content {
+                padding: 8px;
+            }
+            .comment {
+                color: rgb(50, 103, 50);
+            }
+            .head {
+                font-weight: bold;
+                color: rgb(33, 30, 30);
+            }
+            table{
+                border-collapse: collapse;
+                max-width: 100%;
+            }
+            table td:first-child, table th:first-child{
+                border-left: 0;
+    min-width: 150px;
+            }
+            table td, table th{
+                padding: 12px;
+    text-align: left;
+    border: 0;
+    border-left: 1px solid #a4a4a4;
+    border-bottom: 1px solid #a4a4a4;
+            }
+            table th{
+                background-color: #d5d5d5;
+            }
+            .cm-comment{
+                color: rgb(50, 103, 50);
+
+            }
         </style>
     </head>
     <body style="position: relative;">
         <div id="container"></div>
-       
     </body>
     <script>
         const data = {
@@ -89,132 +120,180 @@
                     {
                         title: "String.charAt()",
                         description: "String | Index | get value by index in string | lấy ký tự trong string",
-                        code: [
-                        `var str = "HELLO WORLD";`,
-                         `str.charAt(0);`,
-                         `// hoặc `,
-                         `str[0]`,
-
-                        ],
+                        code: [`var str = "HELLO WORLD";`, `str.charAt(0);`, `// OR `, `str[0]`],
                     },
                     {
                         title: "String.trim()",
                         description: "String | removes whitespace from both sides of a string | xóa khổng trống trong string",
-                        code: [
-                        `var str = "       Hello World!        ";`,
-                         `// return  Hello World!`,
-                        ],
+                        code: [`var str = "       Hello World!        ";`, `// return  Hello World!`],
                     },
                     {
                         title: "Array.isArray()",
                         description: "Array | method checks whether an object is an array. | kiểm tra biến có phải array không",
-                        code: [
-                        `var fruits = ["Banana", "Orange", "Apple", "Mango"];`,
-                         `var x = document.getElementById("demo");`,
-                         `x.innerHTML = Array.isArray(fruits);`,
-                         `//return boolean | true/false`
-                        ],
+                        code: [`var fruits = ["Banana", "Orange", "Apple", "Mango"];`, `var x = document.getElementById("demo");`, `x.innerHTML = Array.isArray(fruits);`, `//return boolean | true/false`],
                     },
                     {
                         title: "Array.forEach()",
                         description: "Array | method calls a function once for each array element. | tạo vòng lặp mảng",
                         code: [
-                        `-------METHOD-------`,
-                        `forEach((element) => { ... } )`,
-                        ` //OR`,
-                        `forEach(function callbackFn(element) { ... })`,
-                        `//OR`,
-                        `forEach(function callbackFn(element, index, array) { ... }, thisArg)`,
-                        `forEach((element, index) => { ... } )`,
-                        `forEach((element, index, array) => { ... } )`,
-                        `is_pre`,
-                        `-------NOTES-------`,
-                         `//DOES NOT  wait for promises. (async/await)`,
-                         `ratings.forEach(async function(rating) {`,
-                         `  sum = await sumFunction(sum, rating)`,
-                         `})`,
-                         `is_pre`,
-                         `----Using thisArg-------`,
-                         `function Counter() {`,
-                         `<space></space>this.sum = 0`,
-                         `<space></space>this.count = 0`,
-                         `is_pre`,
-                         `Counter.prototype.add = function(array) {`,
-                         `<space></space>array.forEach(function countEntry(entry) {`,
-                         `<space></space><space></space>this.sum += entry`,
-                         `<space></space><space></space>++this.count`,
-                         `<space></space>}, this)`,
-                         ` }`,
-                         `is_pre`,
-                         `  const obj = new Counter()`,
-                         `  obj.add([2, 5, 9])`,
-                         `  obj.count`,
-                         `  // 3`,
-                         `  obj.sum`,
-                         `  // 16`,
+                            `-------METHOD-------`,
+                            `forEach((element) => { ... } )`,
+                            `//OR`,
+                            `forEach(function callbackFn(element) { ... })`,
+                            `//OR`,
+                            `forEach(function callbackFn(element, index, array) { ... }, thisArg)`,
+                            `forEach((element, index) => { ... } )`,
+                            `forEach((element, index, array) => { ... } )`,
+                            `is_pre`,
+                            `-------NOTES-------`,
+                            `//DOES NOT  wait for promises. (async/await)`,
+                            `ratings.forEach(async function(rating) {`,
+                            `  sum = await sumFunction(sum, rating)`,
+                            `})`,
+                            `is_pre`,
+                            `----Using thisArg-------`,
+                            `function Counter() {`,
+                            `<space></space>this.sum = 0`,
+                            `<space></space>this.count = 0`,
+                            `is_pre`,
+                            `Counter.prototype.add = function(array) {`,
+                            `<space></space>array.forEach(function countEntry(entry) {`,
+                            `<space></space><space></space>this.sum += entry`,
+                            `<space></space><space></space>++this.count`,
+                            `<space></space>}, this)`,
+                            ` }`,
+                            `is_pre`,
+                            `  const obj = new Counter()`,
+                            `  obj.add([2, 5, 9])`,
+                            `  obj.count`,
+                            `// 3`,
+                            `  obj.sum`,
+                            `// 16`,
                         ],
                     },
                     {
                         title: "Array.map()",
                         description: "Array | method checks whether an object is an array. | lặp phần tử trong mảng từ trái qua phải để trả về 1 giá trí",
                         code: [
-                        `// Arrow function`,
-                        `map((element) => { ... })`,
-                         `map((element, index) => { ... })`,
-                         `map((element, index, array) => { ... })`,
-                         `is_pre`,
-                         `// Callback function`,
-                         `map(callbackFn)`,
-                         `map(callbackFn, thisArg)`,
-                         `is_pre`,
-                         `// Inline callback function`,
-                         `map(function callbackFn(element, index, array) { ... }, thisArg)`,
-                         `is_pre`,
-                         `---Mapping an array of numbers to an array of square roots---`,
-                         `let numbers = [1, 4, 9]`,
-                         `let roots = numbers.map(function(num) {`,
-                         `<space></space>return Math.sqrt(num)`,
-                         `})`,
-                         `// roots is now     [1, 2, 3]`,
-                         `// numbers is still [1, 4, 9]`
+                            `// Arrow function`,
+                            `map((element) => { ... })`,
+                            `map((element, index) => { ... })`,
+                            `map((element, index, array) => { ... })`,
+                            `is_pre`,
+                            `// Callback function`,
+                            `map(callbackFn)`,
+                            `map(callbackFn, thisArg)`,
+                            `is_pre`,
+                            `// Inline callback function`,
+                            `map(function callbackFn(element, index, array) { ... }, thisArg)`,
+                            `is_pre`,
+                            `---Mapping an array of numbers to an array of square roots---`,
+                            `let numbers = [1, 4, 9]`,
+                            `let roots = numbers.map(function(num) {`,
+                            `<space></space>return Math.sqrt(num)`,
+                            `})`,
+                            `// roots is now     [1, 2, 3]`,
+                            `// numbers is still [1, 4, 9]`,
                         ],
                     },
                     {
                         title: "Array.filter()",
                         description: "Array | method creates a new array with all elements that pass the test implemented by the provided function. | lặp phần tử trái qua phải trả về mảng dữ liệu đạt điều kiện đề ra",
                         code: [
-                        `// Arrow function`,
-                        `filter((element, index, array) => { ... } )`,
-                         `is_pre`,
-                         `// Callback function`,
-                         `filter(callbackFn)`,
-                         `filter(callbackFn, thisArg)`,
-                         `is_pre`,
-                         `// Inline callback function`,
-                         `filter(function callbackFn(element, index, array) { ... }, thisArg)`,
-                         `is_pre`,
-                         `---Filter word length > 6 in array ---`,
-                         `const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];`,
-                         `const result = words.filter(word => word.length > 6);`,
-                         `console.log(result);`,
-                         `// expected output: Array ["exuberant", "destruction", "present"]`,
-                         `is_pre`,
-                         `---Find all prime numbers in an array---`,
-                         `const array = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];`,
-                         `is_pre`,
-                         `function isPrime(num) {`,
-                         `<space></space>for (let i = 2; num > i; i++) {`,
-                         `<space></space><space></space>if (num % i == 0) {`,
-                         `<space></space><space></space><space></space>return false;`,
-                         `<space></space><space></space>}`,
-                         `<space></space>}`,
-                         `return num > 1;`,
-                         `}`,
-                         `is_pre`,
-                         `console.log(array.filter(isPrime)); // [2, 3, 5, 7, 11, 13]`,
+                            `// Arrow function`,
+                            `filter((element, index, array) => { ... } )`,
+                            `is_pre`,
+                            `// Callback function`,
+                            `filter(callbackFn)`,
+                            `filter(callbackFn, thisArg)`,
+                            `is_pre`,
+                            `// Inline callback function`,
+                            `filter(function callbackFn(element, index, array) { ... }, thisArg)`,
+                            `is_pre`,
+                            `---Filter word length > 6 in array ---`,
+                            `const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];`,
+                            `const result = words.filter(word => word.length > 6);`,
+                            `console.log(result);`,
+                            `// expected output: Array ["exuberant", "destruction", "present"]`,
+                            `is_pre`,
+                            `---Find all prime numbers in an array | Tìm số nguyên tố---`,
+                            `const array = [-3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];`,
+                            `is_pre`,
+                            `function isPrime(num) {`,
+                            `<space></space>for (let i = 2; num > i; i++) {`,
+                            `<space></space><space></space>if (num % i == 0) {`,
+                            `<space></space><space></space><space></space>return false;`,
+                            `<space></space><space></space>}`,
+                            `<space></space>}`,
+                            `return num > 1;`,
+                            `}`,
+                            `is_pre`,
+                            `console.log(array.filter(isPrime));`,
+                            `// [2, 3, 5, 7, 11, 13]`,
+                            `is_pre`,
+                            `--- filter array content based on search criteria. | Tìm theo chuỗi---`,
+                            `let fruits = ['apple', 'banana', 'grapes', 'mango', 'orange']`,
+                            `function filterItems(arr, query) {`,
+                            `<space></space>return arr.filter(function(el) {`,
+                            `<space></space><space></space>return el.toLowerCase().indexOf(query.toLowerCase()) !== -1`,
+                            `<space></space>})`,
+                            `}`,
+                            `console.log(filterItems(fruits, 'ap'))  // ['apple', 'grapes']`,
+                            `console.log(filterItems(fruits, 'an'))  // ['banana', 'mango', 'orange']`,
+                            `is_pre`,
+                            `---Bạn có thể tùy chỉnh thay đổi,xóa giá trị arr trong tham số, nó sẽ sửa trưc tiếp vào biến bạn đề cập tới để filter---`,
+                            `let words = ['spray', 'limit', 'exuberant', 'destruction', 'elite', 'present']`,
+                            `const modifiedWords = words.filter( (word, index, arr) => {`,
+                            `<space></space>arr[index+1] +=' extra'`,
+                            `<space></space>return word.length < 6`,
+                            `})`,
+                            `//Result is ['spray']`,
+                            `// words now is  ['spray', 'limit extra', 'exuberant extra', 'destruction extra', 'elite extra', 'present extra', 'undefined extra']`,
                         ],
                     },
-
+                    {
+                        title: "Number.isFinite()",
+                        description: "Number | method creates a new array with all elements that pass the test implemented by the provided function. | lặp phần tử trái qua phải trả về mảng dữ liệu đạt điều kiện đề ra",
+                        code: [
+                            `Number.isFinite(Infinity);  // false`,
+                            `Number.isFinite(NaN);       // false`,
+                            `Number.isFinite(-Infinity); // false`,
+                            `Number.isFinite(0);         // true`,
+                            `Number.isFinite(2e64);      // true`,
+                            `Number.isFinite('0');       // false, would've been true with global isFinite('0')`,
+                            `Number.isFinite(null);      // false, would've been true with global isFinite(null)`,
+                            `//NOTES: No support for Internet Explorer`,
+                        ],
+                    },
+                    {
+                        title: "Array.prototype.reduce()",
+                        description:
+                            "Array |  callback function on each element of the array, passing in the return value from the calculation on the preceding element. The final result of running the reducer across all elements of the array is a single value. | lặp phần tử trong mảng trả về 1 giá trị duy nhất",
+                        code: [
+                            `[0, 1, 2, 3, 4].reduce((previousValue, currentValue, currentIndex, array) => {`,
+                            `<space></space>return previousValue + currentValue`,
+                            `}, 10)`,
+                            `is_pre`,
+                            `<table class="standard-table"> <thead> <tr> <th scope="col"><code><var>callback</var></code> iteration</th> <th scope="col"><code><var>previousValue</var></code></th> <th scope="col"><code><var>currentValue</var></code></th> <th scope="col"><code><var>currentIndex</var></code></th> <th scope="col"><code><var>array</var></code></th> <th scope="col">return value</th> </tr></thead> <tbody> <tr> <th scope="row">first call</th> <td><code>10</code></td><td><code>0</code></td><td><code>0</code></td><td><code>[0, 1, 2, 3, 4]</code></td><td><code>10</code></td></tr><tr> <th scope="row">second call</th> <td><code>10</code></td><td><code>1</code></td><td><code>1</code></td><td><code>[0, 1, 2, 3, 4]</code></td><td><code>11</code></td></tr><tr> <th scope="row">third call</th> <td><code>11</code></td><td><code>2</code></td><td><code>2</code></td><td><code>[0, 1, 2, 3, 4]</code></td><td><code>13</code></td></tr><tr> <th scope="row">fourth call</th> <td><code>13</code></td><td><code>3</code></td><td><code>3</code></td><td><code>[0, 1, 2, 3, 4]</code></td><td><code>16</code></td></tr><tr> <th scope="row">fifth call</th> <td><code>16</code></td><td><code>4</code></td><td><code>4</code></td><td><code>[0, 1, 2, 3, 4]</code></td><td><code>20</code></td></tr></tbody> </table>`,
+                                `is_pre`,
+                                `--- Counting instances of values in an object | Đếm số người cùng tên trả về object ---`,
+                                `let names = ['Alice', 'Bob', 'Tiff', 'Bruce', 'Alice']`,
+                                `let countedNames = names.reduce(function (allNames, name) {`,
+                                `<space></space>if (name in allNames) {`,
+                                `<space></space><space></space>allNames[name]++`,
+                                `<space></space>}`,
+                                `<space></space>else {`,
+                                `<space></space><space></space>allNames[name] = 1`,
+                                `<space></space>  return allNames`,
+                                `}, {})`,
+                                `// countedNames is:`,
+                                `// { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }`,
+                                `is_pre`,
+                                `--- Grouping objects by a property | Nhóm object lại bởi cùng một giá trị phần tử ---`,
+                                ``
+                        ],
+                    },
+                    
                 ],
             },
             ES6: {
@@ -223,8 +302,19 @@
                 data: [
                     {
                         title: "charAt()",
-                        description: "String | Index | get value by index in string | lấy kí tự, chuỗi ký tự trong string",
-                        code: [`var str = "HELLO WORLD";`, `str.charAt(0);`],
+                        description:
+                            "String | Index |  method determines whether the passed value is a finite number — that is, it checks that the type of a given value is Number, and the number is neither positive Infinity, negative Infinity, nor NaN. | Kiểm tra giá trị có phải là số không, loại bỏ vô hạn,NaN và giá trị phải loại Number",
+                        code: [
+                            `Number.isFinite(Infinity);  // false`,
+                            `Number.isFinite(NaN);       // false`,
+                            `Number.isFinite(-Infinity); // false`,
+                            `Number.isFinite(0);         // true`,
+                            `Number.isFinite(2e64);      // true`,
+                            `Number.isFinite('0');       // false, would've been true with
+                            // global isFinite('0')`,
+                            `Number.isFinite(null);      // false, would've been true with
+                            // global isFinite(null)`,
+                        ],
                     },
                 ],
             },
@@ -237,80 +327,79 @@
                 block.id = `block_${data[i].index}`;
                 //heading
                 let heading = document.createElement("div");
-                heading.className = "heading"
+                heading.className = "heading";
                 let title = document.createElement("h1");
                 title.innerText = data[i].title;
-                heading.appendChild(title)
-         
+                heading.appendChild(title);
+
                 //button PREV
                 let buttonPrev = document.createElement("button");
-                buttonPrev.setAttribute("onclick",`MOVE(${data[i].index-1})`);
+                buttonPrev.setAttribute("onclick", `MOVE(${data[i].index - 1})`);
                 buttonPrev.innerText = "PREV";
-                if(data[i].index <=0){
+                if (data[i].index <= 0) {
                     buttonPrev.disabled = true;
                 }
-                heading.appendChild(buttonPrev)
+                heading.appendChild(buttonPrev);
                 //button NEXT
                 let buttonNext = document.createElement("button");
-                buttonNext.setAttribute("onclick",`MOVE(${data[i].index+1})`);
+                buttonNext.setAttribute("onclick", `MOVE(${data[i].index + 1})`);
                 buttonNext.innerText = "NEXT";
-                if(data[i].index > Object.keys(data).length -1){
+                if (data[i].index > Object.keys(data).length - 1) {
                     buttonPrev.disabled = true;
                 }
-                heading.appendChild(buttonNext)
-                block.appendChild(heading)
-                //Content 
+                heading.appendChild(buttonNext);
+                block.appendChild(heading);
+                //Content
                 let content = document.createElement("div");
-                content.className = "content"
-                
-                data[i].data.forEach(data => {
+                content.className = "content";
+
+                data[i].data.forEach((data) => {
                     //title
                     let title = document.createElement("h2");
                     title.innerText = data.title;
-                    content.appendChild(title)
-                    
+                    content.appendChild(title);
+
                     //description
                     let desc = document.createElement("small");
                     desc.innerText = data.description;
 
-                    content.appendChild(desc)
+                    content.appendChild(desc);
 
                     //code
                     let codecontain = document.createElement("div");
-                    codecontain.className = "code"
+                    codecontain.className = "code";
 
-                    data.code.forEach(ele=>{
-                        if(ele !=`is_pre`){
+                    data.code.forEach((ele) => {
+                        if (ele != `is_pre`) {
                             let code = document.createElement("code");
                             code.innerHTML = ele;
-                            codecontain.appendChild(code)
-                        }else{
+                            if (ele[0] == "/" && ele[1] == "/") {
+                                code.className = "comment";
+                            }
+                            if (ele[0] == "-" && ele[1] == "-" && ele[2] == "-") {
+                                code.className = "head";
+                            }
+                            codecontain.appendChild(code);
+                        } else {
                             let code = document.createElement("code");
-                            code.className = "pre"
+                            code.className = "pre";
 
-                            codecontain.appendChild(code)
-
+                            codecontain.appendChild(code);
                         }
-                    
-                    })
-                    content.appendChild(codecontain)
-                 
-
+                    });
+                    content.appendChild(codecontain);
                 });
-                block.appendChild(content)
+                block.appendChild(content);
 
                 //renderBlock
                 document.getElementById("container").appendChild(block);
-             
-                
             }
-    
         }
         RENDER(data);
         function MOVE(number) {
-                    let y = document.getElementById(`block_${number}`);
-                    document.documentElement.scrollTop = (number) * y.scrollHeight;
-                }
+            let y = document.getElementById(`block_${number}`);
+            document.documentElement.scrollTop = number * y.scrollHeight;
+        }
         // SETIING
     </script>
 </html>

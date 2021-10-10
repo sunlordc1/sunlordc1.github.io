@@ -57,6 +57,15 @@
                 border-bottom: 1px solid teal;
                 background: white;
             }
+            .heading2 {
+                position: sticky;
+                top:73px;
+                width: 100%;
+                height: 60px;
+                border-bottom: 1px solid teal;
+                background: white;
+            }
+      
             code {
                 width: 100%;
                 display: block;
@@ -290,8 +299,16 @@
                                 `// { 'Alice': 2, 'Bob': 1, 'Tiff': 1, 'Bruce': 1 }`,
                                 `is_pre`,
                                 `--- Grouping objects by a property | Nhóm object lại bởi cùng một giá trị phần tử ---`,
-                                ``
-                        ],
+                                `<code>let people=[{</code><code>&nbsp; &nbsp; &nbsp; &nbsp; name: 'Alice',</code><code>&nbsp; &nbsp; &nbsp; &nbsp; age: 21</code><code>&nbsp; &nbsp;},</code><code>&nbsp; &nbsp;{</code><code>&nbsp; &nbsp; &nbsp; &nbsp; name: 'Max',</code><code>&nbsp; &nbsp; &nbsp; &nbsp; age: 20</code><code>&nbsp; &nbsp;},</code><code>&nbsp; &nbsp;{</code><code>&nbsp; &nbsp; &nbsp; &nbsp; name: 'Jane',</code><code>&nbsp; &nbsp; &nbsp; &nbsp; age: 20</code><code>&nbsp; &nbsp;}</code><code>];</code><code><br></code><code>function groupBy(objectArray, property){</code><code>&nbsp; &nbsp; return objectArray.reduce(function(acc, obj){</code><code>&nbsp; &nbsp; &nbsp; &nbsp; let key=obj[property]</code><code>&nbsp; &nbsp; &nbsp; &nbsp; if (!acc[key]){</code><code>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; acc[key]=[]</code><code>&nbsp; &nbsp; &nbsp; &nbsp;}</code><code>&nbsp; &nbsp; &nbsp; &nbsp; acc[key].push(obj)</code><code>&nbsp; &nbsp; &nbsp; &nbsp; return acc</code><code>&nbsp; &nbsp;},{})</code><code>}</code><code><br></code><code>let groupedPeople=groupBy(people, 'age')</code><code class="cm-comment">// groupedPeople is:</code><code class="cm-comment">//{</code><code class="cm-comment">// &nbsp; 20: [</code><code class="cm-comment">// &nbsp; &nbsp;{name: 'Max', age: 20},</code><code class="cm-comment">// &nbsp; &nbsp;{name: 'Jane', age: 20}</code><code class="cm-comment">// &nbsp;],</code><code class="cm-comment">// &nbsp; 21: [{name: 'Alice', age: 21}]</code><code class="cm-comment">//}</code>`,
+                                `---Bonding arrays contained in an array of objects using the spread operator and initialValue | Liên kết các mảng chứa trong một mảng đối tượng bằng cách sử dụng toán tử spread và initialValue---`,
+                                `<code class="cm-comment">// friends - an array of objects</code><code class="cm-comment">// where object field "books" is a list of favorite books</code><code>let friends=[</code><code>&nbsp; &nbsp;{</code><code>&nbsp; &nbsp; &nbsp; &nbsp; name: "Anna",</code><code>&nbsp; &nbsp; &nbsp; &nbsp; books: ["Bible", "Harry Potter"],</code><code>&nbsp; &nbsp; &nbsp; &nbsp; age: 21,</code><code>&nbsp; &nbsp;},</code><code>&nbsp; &nbsp;{</code><code>&nbsp; &nbsp; &nbsp; &nbsp; name: "Bob",</code><code>&nbsp; &nbsp; &nbsp; &nbsp; books: ["War and peace", "Romeo and Juliet"],</code><code>&nbsp; &nbsp; &nbsp; &nbsp; age: 26,</code><code>&nbsp; &nbsp;},</code><code>&nbsp; &nbsp;{</code><code>&nbsp; &nbsp; &nbsp; &nbsp; name: "Alice",</code><code>&nbsp; &nbsp; &nbsp; &nbsp; books: ["The Lord of the Rings", "The Shining"],</code><code>&nbsp; &nbsp; &nbsp; &nbsp; age: 18,</code><code>&nbsp; &nbsp;},</code><code>];</code><code><br></code><code class="cm-comment">// allbooks - list which will contain all friends' books +</code><code class="cm-comment">// additional list contained in initialValue</code><code>let allbooks=friends.reduce(</code><code>&nbsp; &nbsp; function (previousValue, currentValue){</code><code>&nbsp; &nbsp; &nbsp; &nbsp; return [...previousValue, ...currentValue.books];</code><code>&nbsp; &nbsp;},</code><code>&nbsp; &nbsp; ["Alphabet"]</code><code>);</code><code><br></code><code class="cm-comment">// allbooks=[</code><code class="cm-comment">// &nbsp; 'Alphabet', 'Bible', 'Harry Potter', 'War and peace',</code><code class="cm-comment">// &nbsp; 'Romeo and Juliet', 'The Lord of the Rings',</code><code class="cm-comment">// &nbsp; 'The Shining'</code><code class="cm-comment">//]</code><code><br></code>`,
+                                `is_pre`,
+                                `---Remove duplicate items in an array | Loại bỏ các mục trùng lặp trong một mảng---`,
+                                `is_pre`,
+                                `//Note: If you are using an environment compatible(tương thích) with Set and Array.from(), you could use let arrayWithNoDuplicates = Array.from(new Set(myArray)) to get an array where duplicate items have been removed.`,
+                                `is_pre`,
+                                `<code>let myArray=["a", "b", "a", "b", "c", "e", "e", "c", "d", "d", "d", "d"];</code><code>let myArrayWithNoDuplicates=myArray.reduce(function (previousValue, currentValue){</code><code>&nbsp; &nbsp; if (previousValue.indexOf(currentValue)===-1){</code><code>&nbsp; &nbsp; &nbsp; &nbsp; previousValue.push(currentValue);</code><code>&nbsp; &nbsp;}</code><code>&nbsp; &nbsp; return previousValue;</code><code>}, []);</code><code><br></code><code>console.log(myArrayWithNoDuplicates);</code><code><br></code><code><br></code>`,
+                            ],
                     },
                     
                 ],
@@ -354,16 +371,19 @@
                 content.className = "content";
 
                 data[i].data.forEach((data) => {
+                    let heading = document.createElement("div");
+                    heading.className = "heading2";
                     //title
                     let title = document.createElement("h2");
                     title.innerText = data.title;
-                    content.appendChild(title);
+                    heading.appendChild(title);
 
                     //description
                     let desc = document.createElement("small");
                     desc.innerText = data.description;
+                    heading.appendChild(desc);
 
-                    content.appendChild(desc);
+                    content.appendChild(heading);
 
                     //code
                     let codecontain = document.createElement("div");

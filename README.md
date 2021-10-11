@@ -21,7 +21,7 @@
 >* 4: A world RPG Game (pending)
 * Javascript/HTML5/CSS3/FireBase/Vue/Pixi.JS
 * [Link](https://isekai-in-new-world.web.app/).
-* Use sprite for character moving, block data and moving character when click on map, in future i want create a game online, but i need learning more about js this time.
+* Use sprite for character moving, block data and moving character when click on map, in future i want create a game online, but i need learning more about node.js this time.
 
 >* 5: Werewolf (pending)
 * Javascript/HTML5/CSS3/FireBase/Vue/Socket.io

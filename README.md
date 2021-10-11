@@ -1,5 +1,5 @@
 # SunLord Demo 
-> 1: Lebe 
+>* 1: Lebe 
 * Bootstrap 4
 * Jquery 3.4.1
 * HTML5/CSS3

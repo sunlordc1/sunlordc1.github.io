@@ -26,4 +26,4 @@
 >* 5: Werewolf (pending)
 * Javascript/HTML5/CSS3/FireBase/Vue/Socket.io
 * [Link](https://boardgame-vn.herokuapp.com/).
-* After a world RPG i want learning a bout socket.io for this, then i try make a werewolf game. it is pending by now im busy for new work :< 
+* After a world RPG i want learning about socket.io for this, then i try make a werewolf game. it is pending by now im busy for new work :< 

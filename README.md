@@ -1,5 +1,5 @@
 # SunLord Demo 
->* 1: Lebe 
+>* 1: Lebe (Drop)
 * Bootstrap 4
 * Jquery 3.4.1
 * HTML5/CSS3
@@ -7,7 +7,7 @@
 * [Link](./lebe/).
 * This site is not responsive
 
->* 2: Basketball Draft Event
+>* 2: Basketball Draft Event (Sometime will update)
 * Foundation/Jquery
 * Javascript
 * [Link](./basketballevent/).

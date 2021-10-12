@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Score Board Basketball | Sun Lord</title>
+    <style>
+        *{  box-sizing: border-box;}
+        body{
+            position: relative;
+            background: #071f44;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            color:red;
+        }
+        table{
+            width:100vw;
+            height:100vh;
+            overflow:hidden;
+        }
+        @media screen and (min-width: 320px) and (max-width: 1024px) and (orientation: landscape) {
+            html {
+                transform: rotate(-90deg);
+                transform-origin: left top;
+                width: 100vh;
+                overflow-x: hidden;
+                position: absolute;
+                top: 100%;
+                left: 0;
+            }
+            body{
+            height: 100vw;
+            }
+            table{
+            width:100vh;
+            height:100vw;
+            overflow:hidden;
+        }
+        }
+        body{
+            margin: 0;padding:0;
+        }
+        @font-face {
+            font-family: 'timer';
+            src: 
+            url('./countdown/fonts/timer.ttf') format('truetype'); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
+        }
+        #minutes,#round span, #foul-right-points, #foul-left-points,#seconds,#dumpTime,#turn-seconds,#team-left-points,#team-right-points{
+            font-family: 'timer',cursive;
+            font-size: 300%;
+        }
+     
+       
+        /*Phone Devive*/
+        tr {
+            width:100%;
+        }
+        .col-4{
+            width:33.33333%;
+        }
+        .col-3{
+            width:25%;
+        }
+        .col-6{
+            width:50%;
+        }
+        td div{
+            width:100%;
+        }
+        div input{
+            width:100%;
+        }
+        #name-left span,#name-right span{
+            font-size:400%;
+            font-family: 'Tahoma';
+            color:greenyellow;
+            font-weight: bold;
+        }
+        #name-left,#name-right,#score{
+            height: 100%;
+            padding-top: 20px;
+            text-align:center;
+        }
+        #score{
+            background: #191717;
+       
+            width: 100%;
+            padding: 5vh 5px;
+            box-sizing: border-box;
+        }
+        #score span{
+            font-size:1500%;
+        }
+  
+        #team-right-plus,#team-right-minus,#team-left-plus,#team-left-minus,#foul-right-plus,#foul-right-minus,#foul-left-plus,#foul-left-minus{
+            float:left;
+            width: 50%;
+            line-height: 25px;
+            font-size: 150%;
+            z-index:10;
+            background:#191717;
+            color:yellow;
+            border:1px solid #363636;
+            text-align: center;
+        }
+        #team-right-plus,#team-left-plus,#foul-right-plus,#foul-left-plus{
+            padding:5px 10%;
+
+        }
+        #team-right-minus,#team-left-minus,#foul-right-minus,#foul-left-minus{
+            padding:5px 13%;
+
+}
+        #score-left,#score-right{
+            background:#191717;
+            height:calc(100% - 35px);
+            padding-top: 8%;
+            text-align: center;
+        }
+        #foul-left,#foul-right{
+            background:#191717;
+            height: calc(100% - 95px);
+            text-align: center;
+        }
+        #team-left-points,#team-right-points{
+            color:yellow;
+          font-size:1800%;
+            text-align: center;
+        }
+        #foul-left-points,#foul-right-points{
+          font-size:600%;
+            text-align: center;
+        }
+        #time-of-turn{
+            height:100%;
+            background: #191717;
+            text-align: center;
+        }
+        #turn span {
+            font-size: 800%;
+        }
+       
+        #team_and_time td,#score_and_turn td{
+            height: 20vh;
+        }
+        #foul_and_action td{
+            vertical-align: top;
+        }
+        #play,#stop,#stop-24s, #reset, #reset-14s,#stop-24s-run{
+            font-size: 80%;
+            height: 25px;
+            line-height: 25px;
+            float:left;
+            background:#191717;
+            color:yellow;
+            border:1px solid #363636;
+        }
+        #play{
+            width:30%;
+        }
+        #stop{
+            width:30%;
+
+        }
+        #stop-24s,#stop-24s-run{
+
+            width:20%;
+        }
+        #reset,#reset-14s{
+            width:50%;
+        }
+        #round{
+            text-align: center;
+            height: 100%;
+            padding: 6%;
+            background: #191717;
+        }
+        #turn{
+            background: #191717;
+            text-align: center;
+        }
+        #setting td{
+            height: 60vh;
+        }
+        #setting-area{
+            height: 100%;
+        }
+        #setting-name-left,#setting-name-right, #num-round,#num-minute,#num-second,#save,#hoi-y{
+            height: 25px;
+            line-height: 25px;
+            float:left;
+            background:#191717;
+            color:yellow;
+            border:1px solid #363636;
+        }
+        #setting-name-left,#setting-name-right{
+            width: 35%;
+        }
+        #num-round{
+            width: 30%;
+        }
+        #num-minute,#num-second,#save,#hoi-y{
+            width: 25%;
+        }
+        ::-webkit-input-placeholder { /* Edge */
+                color: yellow;
+                opacity: 0.8;
+                font-style: italic;
+                font-size: 80%;
+                padding:5px;
+            }
+
+            :-ms-input-placeholder { /* Internet Explorer 10-11 */
+                color: yellow;
+                font-style: italic;
+                opacity: 0.8;
+                font-size: 80%;
+                padding:5px;
+
+            }
+
+            ::placeholder {
+                color: yellow;
+                font-style: italic;
+                font-size: 80%;
+                padding:5px;
+                opacity: 0.8;
+            }
+</style>
+</head>
+
+<body>
+    <table >
+        <tr id="team_and_time">
+            <td class="col-3">
+                    <div  id="name-left">
+                        <span>T1</span>
+                    </div>
+            </td>
+            <td class="col-6">
+                
+                    <div id="round">
+                            <span>Round</span>
+                            <span id="round-points">1</span>
+                      </div>    
+                   
+            </td>
+            <td class="col-3">
+                <div id="name-right">
+                    <span>T2</span>
+                </div>
+                    
+            </td>
+        </tr>
+        <tr id="score_and_turn">
+            <td>      
+                <div id="score-left">
+                            <span id="team-left-points">00</span>
+                </div>
+                <div id="team-left-score">
+                        <button id="team-left-plus">
+                                +
+                            </button>
+                        <button id="team-left-minus">
+                                -
+                        </button>
+                </div>
+              
+            </td>
+            <td id="time-of-turn">
+                    <div id="score">
+                            <span id="minutes">00</span>
+                            <span id="colon">:</span>
+                            <span id="seconds">00</span>
+                        </div>
+               
+            </td>
+            <td>
+         
+                    <div id="score-right">
+                            <span id="team-right-points">00</span>
+                    </div>
+                    <div id="team-right-score">
+                        <button id="team-right-plus">
+                                    +
+                            </button>
+                        <button id="team-right-minus">
+                                    -
+                        </button>
+                    </div>
+                
+            </td>
+        </tr>
+        <tr id="foul_and_action">
+            <td>
+                    <div id="foul-left">
+                            <span id="foul-left-points">00</span>
+                    </div>
+                    <button id="foul-left-plus">
+                            +
+                    </button>
+                    <button id="foul-left-minus">
+                            -
+                    </button>
+            </td>
+            <td>
+                    <div id="turn">
+                            <span id="dumpTime">00</span>
+                            <span id="colonTurn">:</span>
+                            <span id="turn-seconds">00</span>
+                     </div> 
+  
+                <div id="action">
+                     <button id="play">
+                            Play
+                        </button>
+                   
+                    
+                     <button id="stop">
+                            Stop 
+                        </button>
+                        <button id="stop-24s-run">
+                            S-12s Giờ trôi
+                        </button>
+                        <button id="stop-24s">
+                            S-12s Giờ chết
+                        </button>
+                 
+                 
+                            <button id="reset">
+                                    Reset 12s
+                                </button>
+                                <button id="reset-14s">
+                                    Reset 12s      
+                                </button>
+                   
+               
+                 
+                </div>
+              
+            
+            </td>
+            <td>
+               
+                   
+                        <div id="foul-right">
+                                <span id="foul-right-points">00</span>
+                        </div>
+                        <button id="foul-right-plus">
+                                +
+                        </button>
+                        <button id="foul-right-minus">
+                                -
+                        </button>
+            </td>
+        </tr>
+        <tr id="setting"> 
+            <td colspan="3">   
+                <div id="setting-area">
+                    <input type="text" id="setting-name-left" placeholder="Name 1">
+                    <input type="text" id="setting-name-right" placeholder="Name 2">
+                    <input type="text" id="num-round" placeholder="Round">
+                    <input type="number" min="0" max="99" id="num-minute" placeholder="Minutes : 10" >
+                    <input type="number" min="0" max="59" id="num-second" placeholder="Seconds : 0" >
+                    <button id="save">Save</button>
+                    <button id="hoi-y">TimeOut</button>
+                </div> </td>
+        </tr>
+    </table>
+    <div class="">
+    
+        <audio id="time-end">
+                <source src="./countdown/sound/het-thoi-gian.wav" type="audio/wav">
+                    <source src="./countdown/sound/het-thoi-gian.mp3" type="audio/mp3">
+                    Your browser does not support the audio element.
+        </audio>
+        <audio id="time-out">
+                <source src="./countdown/sound/het-24s.wav" type="audio/wav">
+                    <source src="./countdown/sound/het-24s.mp3" type="audio/mp3">
+
+                    Your browser does not support the audio element.
+        </audio>
+    </div>
+    <script>
+   
+        //Time Round
+        var minutes = 10;
+        var second = 0
+        var maxfoul=4;
+        var leftfoul=0,rightfoul=0;
+        //Time Turn
+        var secondTurn = 12
+        var countdown;
+        var turnCountdown;
+        var team_left_points=0;
+        var team_right_points=0;
+        var timeEnd = document.getElementById("time-end"); 
+        var timeOut = document.getElementById("time-out"); 
+        var hoi_y_minute=0;
+        var hoi_y_second=5;
+        var hoi_y=false;
+        // Element
+        var el_second = document.getElementById('seconds');
+        ///////////////////////////
+        function startTime(){
+            if (second < 10) {
+            document.getElementById('seconds').innerText ='0' + second.toFixed(0);
+        } else {
+                document.getElementById('seconds').innerText =Math.floor(second);           
+        }
+        if (minutes < 10) {
+            document.getElementById('minutes').innerText = '0' + minutes;
+        } else {
+            document.getElementById('minutes').innerText = minutes;
+        }
+        if (secondTurn < 10) {
+            document.getElementById('turn-seconds').innerText =  secondTurn;
+        } else {
+            document.getElementById('turn-seconds').innerText = secondTurn;
+        }
+
+        }
+        startTime()
+     
+        //////////////////////////
+        function countdownTime() {
+            countdown = setInterval(function () {
+                if (second <= 0) {
+                    if (minutes == 0) {
+                        timeOut.play();
+                    
+                        clearInterval(countdown);
+                        clearInterval(turnCountdown);
+                    } else {
+                        minutes--;
+                        second = 59.9;  
+                        
+                    }
+                   
+                }else{
+                    second=parseFloat(second).toFixed(1)-0.1;
+
+                }
+                // save();
+
+                if (second < 10) {
+                    if(minutes == 0){
+                        document.getElementById('seconds').innerText =  parseFloat(second).toFixed(1) ;
+                    }else{
+                        document.getElementById('seconds').innerText = '0'+ Math.floor(second);
+
+                    }
+                } else {
+        
+                    document.getElementById('seconds').innerText = Math.floor(second);
+                }
+                if (minutes < 10) {
+                    document.getElementById('minutes').innerText = '0' + minutes;
+                } else {
+                    document.getElementById('minutes').innerText = minutes;
+                }
+                if (second==0){
+                    document.getElementById('seconds').innerText = '00';
+                }
+                
+            }, 100);
+          
+        }
+
+        function countdownTurn() {
+            turnCountdown = setInterval(function () {
+                if (secondTurn < 10) {
+                    document.getElementById('turn-seconds').innerText =  secondTurn.toFixed(1);
+                } else {
+                    document.getElementById('turn-seconds').innerText = Math.floor(secondTurn) ;
+                }
+                secondTurn=secondTurn.toFixed(1)-0.1;
+
+                if (secondTurn <= 0) {
+                    secondTurn = 12;
+                    if (secondTurn < 10) {
+                        document.getElementById('turn-seconds').innerText =  secondTurn.toFixed(1);
+                    } else {
+                        document.getElementById('turn-seconds').innerText =   Math.floor(secondTurn);
+                    }
+                    timeOut.play(); 
+                    clearInterval(countdown);
+                    clearInterval(turnCountdown);
+                }
+            }, 100);
+        }
+
+        document.getElementById('play').addEventListener('click', function () {
+            clearInterval(countdown);
+            clearInterval(turnCountdown);
+            countdownTime()
+            countdownTurn();
+
+        })
+        
+        document.getElementById('stop').addEventListener('click', function () {
+            if (secondTurn < 10) {
+                    document.getElementById('turn-seconds').innerText =   secondTurn.toFixed(1);
+                } else {
+                    document.getElementById('turn-seconds').innerText =  Math.floor(secondTurn);
+                }
+            clearInterval(countdown);
+            clearInterval(turnCountdown);
+        })
+        document.getElementById('stop-24s').addEventListener('click', function () {
+            secondTurn = 12;
+            if (secondTurn < 10) {
+                    document.getElementById('turn-seconds').innerText =  secondTurn.toFixed(1);
+                } else {
+                    document.getElementById('turn-seconds').innerText =  Math.floor(secondTurn);
+                }
+            clearInterval(countdown);
+            clearInterval(turnCountdown);
+        })
+        document.getElementById('stop-24s-run').addEventListener('click', function () {
+            secondTurn = 12;
+            if (secondTurn < 10) {
+                    document.getElementById('turn-seconds').innerText =  secondTurn.toFixed(1);
+                } else {
+                    document.getElementById('turn-seconds').innerText =  Math.floor(secondTurn);
+                }
+            clearInterval(turnCountdown);
+        })
+        document.getElementById('reset').addEventListener('click', function () {
+            secondTurn = 12;
+            clearInterval(turnCountdown);
+            clearInterval(countdown);
+            countdownTime()
+            countdownTurn();
+        })
+        document.getElementById('reset-14s').addEventListener('click', function () {
+            secondTurn = 12;
+            clearInterval(turnCountdown);
+            clearInterval(countdown);
+            countdownTime()
+            countdownTurn();
+        })
+        document.getElementById('team-left-plus').addEventListener('click', function () {
+            team_left_points++;
+            if (team_left_points < 10) {
+                    document.getElementById('team-left-points').innerText = '0' + team_left_points;
+                } else {
+                    document.getElementById('team-left-points').innerText = team_left_points;
+                }
+        })
+        document.getElementById('team-left-minus').addEventListener('click', function () {
+            if(team_left_points>0){
+                team_left_points--;
+            }
+            if (team_left_points < 10) {
+                    document.getElementById('team-left-points').innerText = '0' + team_left_points;
+                } else {
+                    document.getElementById('team-left-points').innerText = team_left_points;
+                }
+        })
+        document.getElementById('team-right-plus').addEventListener('click', function () {
+            team_right_points++;
+            if (team_right_points < 10) {
+                    document.getElementById('team-right-points').innerText = '0' + team_right_points;
+                } else {
+                    document.getElementById('team-right-points').innerText = team_right_points;
+                }
+        })
+        document.getElementById('team-right-minus').addEventListener('click', function () {
+            if(team_right_points>0){
+                team_right_points--;
+            }
+            if (team_right_points < 10) {
+                    document.getElementById('team-right-points').innerText = '0' + team_right_points;
+                } else {
+                    document.getElementById('team-right-points').innerText = team_right_points;
+                }
+        })
+        document.getElementById('foul-left-plus').addEventListener('click',function(){
+            leftfoul++;
+            if (leftfoul < 10) {
+                    document.getElementById('foul-left-points').innerText = '0' + leftfoul;
+                } else {
+                    document.getElementById('foul-left-points').innerText = leftfoul;
+                }
+        })
+        document.getElementById('foul-right-minus').addEventListener('click',function(){
+            if(rightfoul>0){
+                rightfoul--;
+            }
+         
+            document.getElementById('foul-right-points').innerText = '0' + rightfoul;
+           
+        })
+        document.getElementById('foul-left-minus').addEventListener('click',function(){
+            if(leftfoul>0){
+                leftfoul--;
+            }
+            document.getElementById('foul-left-points').innerText = '0' + leftfoul;
+         
+        })
+        document.getElementById('foul-right-plus').addEventListener('click',function(){
+            rightfoul++;
+            if (rightfoul < 10) {
+                document.getElementById('foul-right-points').innerText = '0' + rightfoul;
+                } else {
+                    document.getElementById('foul-right-points').innerText = rightfoul;
+                }
+        })
+        document.getElementById('hoi-y').addEventListener('click',function(){
+            timeEnd.play()
+        })
+        function save(){
+            minutes = document.getElementById('num-minute').value;
+            second = document.getElementById('num-second').value;
+        }
+        document.getElementById('save').addEventListener('click',function(){
+            document.querySelector('#name-left span').innerText=document.getElementById('setting-name-left').value;
+            document.querySelector('#name-right span').innerText=document.getElementById('setting-name-right').value;
+            document.getElementById('round-points').innerText=document.getElementById('num-round').value;
+            leftfoul=0;
+            rightfoul=0;
+            document.getElementById('foul-left-points').innerText = '0' + leftfoul;
+            document.getElementById('foul-right-points').innerText = '0' + rightfoul;
+        
+            save()
+        //    console.log(minutes);
+        //    console.log(second);
+            if (second < 10) {
+                    document.getElementById('seconds').innerText = '0'+ second;
+                } else {
+                    document.getElementById('seconds').innerText = second;
+                }
+            if (minutes < 10) {
+                    document.getElementById('minutes').innerText = '0' + minutes;
+                } else {
+                    document.getElementById('minutes').innerText = minutes;
+                }
+       
+        })
+    </script>
+</body>
+
+</html>

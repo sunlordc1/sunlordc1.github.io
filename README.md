@@ -7,7 +7,7 @@
 * [Link](./lebe/).
 * This site is not responsive
 
->* 2: Basketball Draft Event (Sometime will update)
+>* 2: Basketball Draft Event (Can update)
 * Foundation/Jquery
 * Javascript
 * [Link](./basketballevent/).
@@ -27,3 +27,8 @@
 * Javascript/HTML5/CSS3/FireBase/Vue/Socket.io
 * [Link](https://boardgame-vn.herokuapp.com/).
 * After a world RPG i want learning about socket.io for this, then i try make a werewolf game. it is pending by now im busy for new work :< 
+
+>* 6: Basketball Countdown Board (Can update)
+* Javascript/HTML5/CSS3/
+* [Link](./countdown_basketball_board/).
+* Can use for your match basketball for show team point, show time, but need a people work with device on site. 

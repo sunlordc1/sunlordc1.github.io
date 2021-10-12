@@ -13,7 +13,7 @@
 * [Link](./basketballevent/).
 * This project for draft team use JSON for save player,Javascript for render view data drive with LocalStorage
 
->* 3: SyntaxJS
+>* 3: SyntaxJS (pending)
 * Javascript/HTML5/CSS3
 * [Link](./syntaxJS/).
 * This project for me, save,write snippet and learn method in JS use JSON for render data view

@@ -1,4 +1,3 @@
-# SunLord Demo 
 ># 1: Lebe (Drop)
 * Bootstrap 4
 * Jquery 3.4.1

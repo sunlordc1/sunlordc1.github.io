@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <style>
+     
+        
+        ul {
+            list-style-type: none;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        .month {
+
+            padding: 70px 25px;
+            width: 100%;
+            height: 240px;
+         
+            text-align: center;
+        }
+        
+        .month ul {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .month ul li {
+            color: white;
+            font-size: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+
+        }
+        
+        .month .prev {
+            float: left;
+            padding-top: 10px;
+            color:orange;
+        }
+        
+        .month .next {
+            float: right;
+            padding-top: 10px;
+            color:orange;
+
+        }
+        #next,#prev{
+            color:orange;
+            background: white;
+            border-radius: 50%;
+            width: 28px;
+        }
+        #next:focus,#prev:focus{
+            outline: none;
+            background: orange;
+            color:white;
+        }
+        .weekdays {
+            margin: 0;
+            padding: 10px;
+            background: #FF5C19;
+
+        }
+        
+        .weekdays li {
+            display: inline-block;
+            width: 13%;
+            text-align: center;
+            font-size: 13px;
+            color: white;
+            font-weight: bold;
+          
+        }
+        
+        .days {
+            padding: 10px;
+            background: #FFF4CD; 
+            min-height: 350px;
+            margin: 0;
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+            border: 1px solid #FF5C19;
+        }
+        
+        .days li {
+            list-style-type: none;
+            display: inline-block;
+            width: 14%;
+            min-height: 40px;
+            max-height: 60px;
+            text-align: center;
+            margin-bottom: 5px;
+            font-size: 12px;
+            color: #777;
+            padding: 3px;
+
+        }
+        .days li button{
+            color:black;
+            min-height: 40px;
+            max-height: 60px;
+        }
+        .days li button:focus,.days li button:active{
+            width: 100%;
+            min-height: 40px;
+            max-height: 60px;
+            border-radius: 50%;
+            background: #FF5C19;
+            color: white !important
+        }
+        .days li .active {
+            width: 100%;
+            min-height: 40px;
+            max-height: 60px;
+            border-radius: 50%;
+            border: 1px solid #FF5C19;
+        }
+        /* Add media queries for smaller screens */
+        
+        button {
+            background: transparent;
+            outline: none;
+            border: 0;
+            cursor: pointer;
+            font-size: 16px;
+            color: white;
+        }
+        button:focus{outline:none;}
+        .calendar {}
+        
+        .day button {
+       
+            cursor: pointer;
+        }
+        .month:after{
+        
+    content : "";
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    background-image: url(https://www.palestinefa.com/wp-content/uploads/2016/10/1458530071096-mbk-312-wisconsin-xavier-1920.jpg-379123.960x540.jpg); 
+    width: calc(100% - 30px);
+    height: 240px;
+   border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    opacity : 0.7;
+    z-index: -1;
+
+        }
+        .praticing{
+            margin-top: 10px;
+            padding: 10px;  
+            border-radius: 10px;
+            background: #FFF4CD;
+            overflow-y: scroll;
+            overflow-x: hidden;
+            max-height: 625px;
+        }
+        .practicing-item{
+            background: rgba(255, 92, 25,0.8);
+            width: 100%;
+            height: 125px;
+            margin-top: 7.5px;
+            position: relative;
+            color:white;
+            padding: 10px;
+        }
+        .practicing-item p{
+            margin-bottom:0;
+        }
+        .edit-btn,.notes-btn{
+            background: white;
+            color:#FF5C19;
+            font-weight: bold;
+        }
+        #select-date{
+            display: inline-block;
+            padding: 5px 10px;
+             background:#FF5C19;
+            color:white;
+            font-weight: bold;
+        }
+        .delete-btn{
+            color:white;
+            position: absolute;
+            top:0;
+            right: 0;
+        }
+        .notes-btn{
+            position: absolute;
+            top:5px;
+            right: 30px;
+        }
+        .edit-btn{
+            position: absolute;
+            top:5px;
+            right: 125px; 
+        }
+        .practicing-item:hover{
+             background: rgba(255, 92, 25,1);
+             cursor:pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="calendar">
+
+                    <div class="month">
+                        <ul>
+                            <li class="prev">
+                                <button id="prev">&#10094;</button>
+                            </li>
+                            <li class="next">
+                                <button id="next">&#10095;</button>
+                            </li>
+                            <li>
+                                <span id="month" style="padding: 0 15px">Jun</span>
+                                <br>
+                                <span id="year" style="padding: 0 15px;font-size: 18px">2018</span>
+                                <br>
+                                <span id="dateInMonth" style="padding: 0 15px;font-size: 18px"></span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <ul class="weekdays">
+                        <li>C.N</li>
+                        <li>Thứ 2</li>
+                        <li>Thứ 3</li>
+                        <li>Thứ 4</li>
+                        <li>Thứ 5</li>
+                        <li>Thứ 6</li>
+                        <li>Thứ 7</li>
+                    </ul>
+
+                    <ul id="days" class="days">
+
+                    </ul>
+
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="praticing">    
+                    <h2 id="select-date"></h2>
+                    <div class="practicing-item">
+                        <h2 class="title-practicing-item">Tiêu đề </h2>
+                        <div class="row">
+                        <div class="col-6">
+                            <p>Thời gian bắt đầu <span class="from-practicing-item">14:00</span></p>
+                            <p>Thời gian kết thúc <span class="from-practicing-item">16:00</span></p>
+                           
+                        </div>
+                        <div class="col-6">
+                             <p>Trạng thái :
+                            <span class="status-practicing-item">Đã cố định</span>
+
+                            </p>
+                            <p>
+                                Giá : 
+                                <span class="status-practicing-item">350000 VNĐ</span>
+                            </p>
+                        </div>
+
+                        </div>
+                        <button class="notes-btn">Xem thêm</button>
+                                <button class="edit-btn">Sửa</button>
+                         <button class="delete-btn">✖</button>
+                    </div>
+                    <div class="practicing-item">
+                        <h2 class="title-practicing-item">Tiêu đề </h2>
+                        <div class="row">
+                        <div class="col-6">
+                            <p>Thời gian bắt đầu <span class="from-practicing-item">14:00</span></p>
+                            <p>Thời gian kết thúc <span class="from-practicing-item">16:00</span></p>
+                           
+                        </div>
+                        <div class="col-6">
+                             <p>Trạng thái :
+                            <span class="status-practicing-item">Đã cố định</span>
+
+                            </p>
+                            <p>
+                                Giá : 
+                                <span class="status-practicing-item">350000 VNĐ</span>
+                            </p>
+                        </div>
+
+                        </div>
+                        <button class="notes-btn">Xem thêm</button>
+                                <button class="edit-btn">Sửa</button>
+                         <button class="delete-btn">✖</button>
+                    </div><div class="practicing-item">
+                        <h2 class="title-practicing-item">Tiêu đề </h2>
+                        <div class="row">
+                        <div class="col-6">
+                            <p>Thời gian bắt đầu <span class="from-practicing-item">14:00</span></p>
+                            <p>Thời gian kết thúc <span class="from-practicing-item">16:00</span></p>
+                           
+                        </div>
+                        <div class="col-6">
+                             <p>Trạng thái :
+                            <span class="status-practicing-item">Đã cố định</span>
+
+                            </p>
+                            <p>
+                                Giá : 
+                                <span class="status-practicing-item">350000 VNĐ</span>
+                            </p>
+                        </div>
+
+                        </div>
+                        <button class="notes-btn">Xem thêm</button>
+                                <button class="edit-btn">Sửa</button>
+                         <button class="delete-btn">✖</button>
+                    </div><div class="practicing-item">
+                        <h2 class="title-practicing-item">Tiêu đề </h2>
+                        <div class="row">
+                        <div class="col-6">
+                            <p>Thời gian bắt đầu <span class="from-practicing-item">14:00</span></p>
+                            <p>Thời gian kết thúc <span class="from-practicing-item">16:00</span></p>
+                           
+                        </div>
+                        <div class="col-6">
+                             <p>Trạng thái :
+                            <span class="status-practicing-item">Đã cố định</span>
+
+                            </p>
+                            <p>
+                                Giá : 
+                                <span class="status-practicing-item">350000 VNĐ</span>
+                            </p>
+                        </div>
+
+                        </div>
+                        <button class="notes-btn">Xem thêm</button>
+                                <button class="edit-btn">Sửa</button>
+                         <button class="delete-btn">✖</button>
+                    </div><div class="practicing-item">
+                        <h2 class="title-practicing-item">Tiêu đề </h2>
+                        <div class="row">
+                        <div class="col-6">
+                            <p>Thời gian bắt đầu <span class="from-practicing-item">14:00</span></p>
+                            <p>Thời gian kết thúc <span class="from-practicing-item">16:00</span></p>
+                           
+                        </div>
+                        <div class="col-6">
+                             <p>Trạng thái :
+                            <span class="status-practicing-item">Đã cố định</span>
+
+                            </p>
+                            <p>
+                                Giá : 
+                                <span class="status-practicing-item">350000 VNĐ</span>
+                            </p>
+                        </div>
+
+                        </div>
+                        <button class="notes-btn">Xem thêm</button>
+                                <button class="edit-btn">Sửa</button>
+                         <button class="delete-btn">✖</button>
+                    </div>  
+                    <!-- <form>
+                         <div class="form-group">
+                            <label for="title">Tên giờ tập</label>
+                            <input type="text" class="form-control" id="title" aria-describedby="title-help" placeholder="Nhập tên giờ tập">
+                            <small id="title-help" class="form-text text-muted">Không được để trống tên giờ tập</small>
+                          </div>
+                          <div class="form-group">
+                            <label for="title">Tên giờ tập</label>
+                            <input type="text" class="form-control" id="title" aria-describedby="title-help" placeholder="Nhập tên giờ tập">
+                            <small id="title-help" class="form-text text-muted">Không được để trống tên giờ tập</small>
+                          </div>
+                    </form> -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- <h2>Store Date Here</h2>
+    <div class="store-date">
+        <p id="day-now">a</p>
+        <p id="month-now">b</p>
+        <p id="date-now">c</p>
+        <p id="year-now">d</p>
+        <p>Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec</p>
+        <p>Sun,Mon,Tue,Wed,Thu,Fri,Sat</p>
+    </div> -->
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+<script src="./calendar-by-sun-lord.js"></script>
+
+</html>
